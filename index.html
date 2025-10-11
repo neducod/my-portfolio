@@ -15,8 +15,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
+    <header class="navbar">
+        <div class="nav-container">
+          <div class="logo">Josephine<span>💻</span></div>
+    
+          <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+    
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </header>
 
      <!-- Hero Section -->
     <section id="hero" class="hero-section">
@@ -25,7 +46,7 @@
                 Hi, I'm <span class="gradient-text">Josephine</span>
             </h1>
             <p class="hero-subtitle fade-in-up" style="animation-delay: 0.1s">
-                A Frontend Developer
+                Frontend Developer
             </p>
             <p class="hero-description fade-in-up" style="animation-delay: 0.2s">
                 I create beautiful, responsive web experiences that bring ideas to life
@@ -74,10 +95,26 @@
 
                 <div class="service-card">
                     <svg class="service-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                    </svg>
+                    <h3 class="service-title">Version Control</h3>
+                    <p class="service-description">Using version control systems like Git/GitHub to collaborate with other developers and manage code changes effectively.</p>
+                </div>
+
+                <div class="service-card">
+                    <svg class="service-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                     </svg>
                     <h3 class="service-title">Performance</h3>
                     <p class="service-description">Optimizing for speed and user experience</p>
+                </div>
+
+                <div class="service-card">
+                    <svg class="service-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <h3 class="service-title">Continous Learning</h3>
+                    <p class="service-description">Staying updated with the latest frontend technologies, trends, and best practices to deliver modern and innovative solution</p>
                 </div>
             </div>
         </div>
@@ -93,7 +130,7 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image-wrapper">
-                        <img src="./img/download (1).jpeg" alt="E-Commerce Platform" class="project-image">
+                        <img src="./img/ghfjdkm,s33.png" alt="E-Commerce Platform" class="project-image">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">E-Commerce Platform</h3>
@@ -111,12 +148,13 @@
                                 Code
                             </button>
                             <button class="btn btn-primary btn-sm">
+                                <a href="https://fresh-mate-psi.vercel.app/">Live</a>
                                 <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
                                     <line x1="10" y1="14" x2="21" y2="3"></line>
                                 </svg>
-                                Live
+        
                             </button>
                         </div>
                     </div>
@@ -128,11 +166,11 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Glow Heaven</h3>
-                        <p class="project-description">Interactive landing page for a cosmetic products</p>
+                        <p class="project-description">Interactive landing page for a cosmetic products. it features smooth layouts, soft colors, and a calming aesthetic that highlights beauty and self-care. Perfect for showcasing products or launching a beauty brand online.</p>
                         <div class="project-tags">
                             <span class="tag">React</span>
-                            <span class="tag">Charts</span>
-                            <span class="tag">TypeScript</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">AOS</span>
                         </div>
                         <div class="project-buttons">
                             <button class="btn btn-outline btn-sm">
@@ -142,12 +180,13 @@
                                 Code
                             </button>
                             <button class="btn btn-primary btn-sm">
+                                <a href="https://glow-heavenn.vercel.app/" target="_blank">Live</a>
                                 <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
                                     <line x1="10" y1="14" x2="21" y2="3"></line>
                                 </svg>
-                                Live
+                                
                             </button>
                         </div>
                     </div>
@@ -159,11 +198,11 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Creative Portfolio</h3>
-                        <p class="project-description">Modern portfolio website with smooth animations, gallery features, and contact integration.</p>
+                        <p class="project-description">A minimal, responsive web app that instantly counts words, characters, and reading time as you type.</p>
                         <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Framer Motion</span>
-                            <span class="tag">CSS</span>
+                            <span class="tag">Vanilla Js</span>
+                            <span class="tag">AOS</span>
+                            <span class="tag">Tailwind</span>
                         </div>
                         <div class="project-buttons">
                             <button class="btn btn-outline btn-sm">
@@ -173,12 +212,13 @@
                                 Code
                             </button>
                             <button class="btn btn-primary btn-sm">
+                                <a href="https://wise-write.vercel.app/" target="_blank">Live</a>
                                 <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
                                     <line x1="10" y1="14" x2="21" y2="3"></line>
                                 </svg>
-                                Live
+                               
                             </button>
                         </div>
                     </div>
@@ -334,7 +374,7 @@
                     <p class="contact-text">Have a project in mind? Let's work together!</p>
                 </div>
 
-                <form id="contactForm" class="contact-form">
+                <form id="contactForm" class="contact-form" action="https://formsubmit.co/nedunony16@gmail.com" method="POST">
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" id="name" class="form-input" placeholder="Your name" required>
@@ -357,6 +397,14 @@
                         </svg>
                         Send Message
                     </button>
+
+
+
+                    <!-- Optional hidden fields -->
+<input type="hidden" name="_subject" value="New Message from Portfolio">
+<input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+<input type="hidden" name="_captcha" value="false">
+
                 </form>
 
                 <div id="toast" class="toast"></div>
@@ -369,18 +417,19 @@
         <div class="container">
             <div class="footer-content">
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="GitHub">
+                    <!-- <a href="#" class="social-link" aria-label="GitHub">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
+                    </a> -->
+                   <!--  <a href="#" class="social-link" aria-label="LinkedIn">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                             <rect x="2" y="9" width="4" height="12"></rect>
                             <circle cx="4" cy="4" r="2"></circle>
                         </svg>
-                    </a>
+                    </a> -->
+
                     <a href="#" class="social-link" aria-label="Twitter">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
@@ -403,5 +452,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>
