@@ -157,7 +157,10 @@ body {
     color: var(--primary-foreground);
     box-shadow: var(--shadow-soft);
 }
-
+.btn-primary a{
+    color: white;
+    text-decoration: none;
+}
 .btn-primary:hover {
     box-shadow: var(--shadow-hover);
     opacity: 0.9;
