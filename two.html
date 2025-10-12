@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josephine Jerome — Frontend Developer</title>
+  <meta name="description" content="Frontend developer focusing on accessible, high-performance web interfaces. Portfolio of Josephine Chinedu Jerome." />
+  <meta name="author" content="Josephine Jerome" />
+  <meta name="keywords" content="frontend developer, web developer, React, JavaScript, CSS, HTML, portfolio" />
+
+  <meta property="og:title" content="Josephine Jerome — Frontend Developer" />
+  <meta property="og:description" content="Building interfaces that perform: Frontend development beyond pixels." />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@nedu_nony" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="./two.css">
+  <!-- <link rel="stylesheet" href="./portfolio-style.css" /> -->
+</head>
+<body>
+  <!-- Profile seal top-right -->
+  <div class="profile-seal" aria-hidden="true">
+    <svg class="seal-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+      <defs>
+        <path id="circlePath" d="M60,12a48,48 0 1,1 -0.0001,0z" />
+      </defs>
+      <g transform="translate(0,0)">
+        <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5" />
+        <clipPath id="clip">
+          <circle cx="60" cy="60" r="30" />
+        </clipPath>
+        <image href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><rect width='100%' height='100%' fill='%230b0b0b'/><text x='50%' y='50%' font-size='14' text-anchor='middle' fill='%23cccccc' dy='.35em'>JJ</text></svg>" x="30" y="30" width="60" height="60" clip-path="url(#clip)"></image>
+        <text>
+          <textPath href="#circlePath" startOffset="10" style="font-size:9px; fill:rgba(255,255,255,0.55); letter-spacing:1px;">
+            JOSEPHINE JEROME • FRONTEND DEVELOPER •
+          </textPath>
+        </text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="app">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">JJ</div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav id="primary-nav" aria-label="Primary Navigation">
+        <a href="#intro" class="nav-link active">Intro</a>
+        <a href="#work" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#about" class="nav-link">About & Contact</a>
+      </nav>
+    </aside>
+
+    <!-- Mobile overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Hero Section -->
+      <section class="hero" id="intro">
+        <div class="availability reveal">Open to new opportunities</div>
+        <h1 class="headline reveal">
+          Building interfaces that perform: Frontend development beyond pixels.
+        </h1>
+
+        <div class="cta-row reveal">
+          <button class="btn btn-primary" data-scroll-to="about">Hire Me</button>
+          <button class="btn btn-outline" data-scroll-to="work">View Projects</button>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="work" class="section-projects">
+        <div class="reveal">
+          <h2>Selected Projects</h2>
+          <p class="work-description">
+            A selection of my recent frontend projects with a focus on
+            performance, accessibility, and delightful UI.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project reveal">
+            <div class="project-thumb">
+              <img src="./img/upcijcd.png" alt="WordPress Website" loading="lazy" />
+            </div>
+            <h3>WordPress Website</h3>
+            <p class="project-description">Coming Soon...</p>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-thumb">
+              <img src="./img/ghfjdkm,s33.png" alt="E-Commerce Website" loading="lazy" />
+            </div>
+            <a href="https://neducod.github.io/fresh-mate/" target="_blank" rel="noopener noreferrer">
+              <h3>E-Commerce Website</h3>
+              <p class="project-description">
+                Functional eCommerce site with secure login, product search, dynamic cart, and seamless payment checkout.
+              </p>
+            </a>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-thumb">
+              <img src="./img/itnrfd55r.png" alt="WiseWrite" loading="lazy" />
+            </div>
+            <a href="https://neducod.github.io/wise-write/" target="_blank" rel="noopener noreferrer">
+              <h3>WiseWrite</h3>
+              <p class="project-description">
+                A simple and efficient word and character counter that instantly calculates text length, helping users track content and improve writing precision.
+              </p>
+            </a>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-thumb">
+              <img src="./img/glowheave.png" alt="Glow Heaven" loading="lazy" />
+            </div>
+            <a href="https://neducod.github.io/glow-heaven/" target="_blank" rel="noopener noreferrer">
+              <h3>Glow Heaven</h3>
+              <p class="project-description">A static landing page for a cosmetic product</p>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section-skills reveal">
+        <div>
+          <h2>Skills</h2>
+          <p class="skills-intro">
+            The tools and technologies I've been learning and using to build
+            clean, functional web projects.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill">
+            <strong>HTML & Accessibility</strong>
+            <div class="bar"><i data-fill="85"></i></div>
+            <p class="skill-description">
+              Writing clean, semantic markup that's easy to maintain and accessible to everyone.
+            </p>
+          </div>
+
+          <div class="skill">
+            <strong>CSS & Responsive Design</strong>
+            <div class="bar"><i data-fill="80"></i></div>
+            <p class="skill-description">
+              Building flexible layouts using Flexbox, Grid, and modern CSS techniques.
+            </p>
+          </div>
+
+          <div class="skill">
+            <strong>JavaScript (ES6+)</strong>
+            <div class="bar"><i data-fill="70"></i></div>
+            <p class="skill-description">
+              Adding interactivity, animations, and logic to make sites dynamic and engaging.
+            </p>
+          </div>
+
+          <div class="skill">
+            <strong>Version Control (Git & GitHub)</strong>
+            <div class="bar"><i data-fill="65"></i></div>
+            <p class="skill-description">
+              Comfortable managing code with Git, branching, and pushing to GitHub.
+            </p>
+          </div>
+
+          <div class="skill">
+            <strong>Learning Next: React & Frameworks</strong>
+            <div class="bar"><i data-fill="55"></i></div>
+            <p class="skill-description">
+              Currently learning component-based development and reusable UI logic.
+            </p>
+          </div>
+
+          <div class="skill">
+            <strong>Design Tools & UI Sense</strong>
+            <div class="bar"><i data-fill="60"></i></div>
+            <p class="skill-description">
+              Basic knowledge of Figma and color/typography principles for modern design.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section id="blog" class="section-blog reveal">
+        <div class="blog-header">
+          <h2>Blog</h2>
+          <p class="blog-description">
+            Short posts on frontend patterns, performance, and small experiments.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+            <div class="blog-item">
+              <a href="https://josephinejeromehowtocenteradiv.hashnode.dev/" target="_blank" rel="noopener noreferrer">
+                <img src="./img/ghfjdmr.png" alt="How to Center a Div" loading="lazy" />
+              </a>
+            </div>
+  
+            <div class="blog-item">
+              <a href="https://josephinewritesoncss.hashnode.dev/" target="_blank" rel="noopener noreferrer">
+                <img src="./img/fgdhjksmn.png" alt="CSS Fundamentals" loading="lazy" />
+              </a>
+            </div>
+          </div>
+        </section>
+  
+        <!-- About & Contact Section -->
+        <section id="about" class="section-about reveal">
+          <h2>About & Contact</h2>
+  
+          <div class="about-container">
+            <div class="about-text">
+              <p class="intro-highlight">
+                Hi, I'm a frontend developer focusing on accessible,
+                high-performance web interfaces. I enjoy turning designs into
+                polished, usable products and improving developer workflows.
+              </p>
+  
+              <p>
+                Hi, I'm Josephine Chinedu Jerome — a frontend web developer from
+                Nigeria passionate about building clean, user-friendly, and
+                meaningful digital experiences.
+              </p>
+  
+              <p>
+                I started coding in 2023, and since then, I've been constantly
+                improving my skills through hands-on learning, projects, and online
+                courses like AltSchool Africa's Frontend Engineering program, where
+                I graduated from. I love bringing ideas to life with HTML, CSS,
+                JavaScript, and React, and I'm currently learning more about
+                Firebase, WordPress, and email development to expand my skill set.
+              </p>
+  
+              <p>
+                My long-term goal is to grow as a developer, land freelance gigs,
+                internships, or a frontend role, and eventually build solutions that
+                real people can use — like the grocery store web app I'm making for
+                my mom. I'm also learning to balance creativity, design, and
+                performance to make every project feel smooth and visually pleasing.
+              </p>
+  
+              <p>
+                Beyond coding, I'm documenting my journey as a 17-year-old chasing
+                her dreams — through journaling, voice recordings, and vlogs —
+                because I believe every step of growth deserves to be remembered.
+              </p>
+  
+              <div class="focus-list">
+                <p class="focus-title">I'm currently focused on:</p>
+                <ul>
+                  <li>Sharpening my JavaScript and React skills</li>
+                  <li>Building my portfolio projects</li>
+                  <li>Exploring freelance opportunities on platforms like Freelancer and Fiverr</li>
+                  <li>And creating software that impacts at least 200 users someday</li>
+                  <li>When I'm not coding, you'll probably find me reading, listening to music, learning something new, or exploring ideas that help me become smarter and more confident every day.</li>
+                  <li>Let's build something great together 🌷</li>
+                </ul>
+              </div>
+  
+              <div class="contact-section">
+                <h3>Get in Touch</h3>
+                <p class="contact-intro">
+                  I'm always open to new opportunities, collaborations, or just
+                  chatting about web development. Feel free to send a message below.
+                  I'll get back to you as soon as I can!
+                </p>
+  
+                <form id="contact-form" aria-label="Contact form">
+                  <input type="text" name="name" placeholder="Your name" required />
+                  <input type="email" name="email" placeholder="Email" required />
+                  <textarea name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+                  <button class="btn btn-primary" type="submit">Send message</button>
+                </form>
+              </div>
+  
+              <p class="social-links">
+                Connect:
+                <a href="https://linktr.ee/josephinechinedujerome" target="_blank" rel="noopener noreferrer">Link Tree</a> •
+                <a href="https://josephinejeromehowtocenteradiv.hashnode.dev/" target="_blank" rel="noopener noreferrer">Hashnode</a> •
+                <a href="https://x.com/nedu_nony" target="_blank" rel="noopener noreferrer">Twitter</a>
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  
+    <script src="./portfolio-script.js"></script>
+  </body>
+  </html>
+  

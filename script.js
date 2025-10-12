@@ -134,7 +134,7 @@ ltrs.forEach((ltr) => {
 
 
 
-
+/*
 
 
   const hamburger = document.querySelector('.hamburger');
@@ -154,3 +154,13 @@ ltrs.forEach((ltr) => {
     sidebar.classList.remove('active');
     overlay.classList.remove('show');
   });
+*/
+
+
+const hamburger = document.querySelector('.hamburger');
+const sidebar = document.querySelector('.sidebar');
+
+hamburger.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+  document.body.classList.toggle('menu-open');
+});

@@ -1,0 +1,13 @@
+#project-header{
+    width: 90%;         /* adapts to screen width */
+    max-width: 1200px;  /* never grow too large */
+    margin: 0 auto;     /* centers it */
+    padding: 20px;
+
+    word-wrap: break-word;  /* ✅ old syntax but widely supported */
+  overflow-wrap: break-word; /* ✅ modern, recommended */
+  white-space: normal; 
+}
+#project-header p{
+
+}

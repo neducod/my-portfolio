@@ -1,0 +1,266 @@
+/* ===== Global Reset & Variables ===== */
+:root{
+    --bg: #0b0b0b;
+    --panel: #0f0f10;
+    --muted: #9aa0a6;
+    --accent: #27b0ff;
+    --card: #0e0e10;
+    --glass: rgba(255,255,255,0.03);
+    --radius: 12px;
+    --shadow: 0 6px 24px rgba(0,0,0,0.45);
+    --max-width: 1152px;
+    --transition: 300ms cubic-bezier(.4,0,.2,1);
+    --text: #f5f5f5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(180deg, #070707 0%, #0b0b0b 100%);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+    overflow-x: hidden;
+    padding-left: 240px; /* reserve space for desktop sidebar */
+  }
+  
+  /* ===== Sidebar ===== */
+  .sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 240px;
+    padding: 28px 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-right: 1px solid rgba(255,255,255,0.03);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    z-index: 50;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  
+  /* Small header row inside sidebar */
+  .sidebar-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .logo{
+    font-weight:800;
+    font-size:20px;
+    letter-spacing:1px;
+  }
+  
+  /* hamburger (for small screens) */
+  .hamburger{
+    display:none;
+    width:38px;
+    height:38px;
+    border-radius:8px;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+  }
+  .hamburger span{
+    display:block;
+    height:3px;
+    width:18px;
+    background:var(--text);
+    margin:4px 0;
+    transition: transform 220ms ease, opacity 220ms ease;
+  }
+  
+  /* nav links */
+  .nav{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .nav-link{
+    color:var(--muted);
+    text-decoration:none;
+    font-weight:600;
+    padding:8px 10px;
+    border-radius:8px;
+    transition: background var(--transition), color var(--transition);
+  }
+  .nav-link:hover{ background: rgba(255,255,255,0.02); color:var(--text) }
+  .nav-link.active{ background: rgba(39,176,255,0.12); color:var(--accent) }
+  
+  /* small profile seal at bottom */
+  .profile-seal{ margin-top:auto; opacity:0.95 }
+  
+  /* ===== Overlay (mobile) ===== */
+  .overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background: rgba(0,0,0,0.6);
+    z-index:40;
+    opacity:0;
+    transition: opacity var(--transition);
+  }
+  
+  /* ===== App / Main ===== */
+  .app{ min-height:100vh; }
+  .main{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 48px 28px;
+  }
+  
+  /* hero */
+  .hero{
+    padding: 40px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    align-items:flex-start;
+    min-height: 56vh;
+    justify-content:center;
+  }
+  .availability{ color:var(--accent); font-weight:700; font-size:13px }
+  .headline{
+    font-size: clamp(28px, 5.6vw, 56px);
+    line-height:1.02;
+    max-width: 920px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin:0;
+    font-weight:800;
+  }
+  
+  /* CTA buttons row */
+  .cta-row{ display:flex; gap:12px; margin-top:8px }
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:10px; cursor:pointer; border:1px solid rgba(255,255,255,0.04); text-decoration:none; color:var(--text); background:transparent }
+  .btn-primary{ background: linear-gradient(90deg,var(--accent), #8c5cff); color:#fff; box-shadow: 0 8px 24px rgba(0,0,0,0.45) }
+  .btn-outline{ background:transparent; border:1px solid rgba(255,255,255,0.06) }
+  
+  /* section head */
+  .section{ padding:36px 0 }
+  .section-head h2{ font-size:22px; margin-bottom:8px }
+  .muted{ color: #9aa0a6 }
+  
+  /* projects grid */
+  .projects-grid{
+    display:grid;
+    gap:22px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-top:18px;
+  }
+  .project-card{
+    background: rgba(255,255,255,0.02);
+    border-radius: 12px;
+    overflow:hidden;
+    border: 1px solid rgba(255,255,255,0.03);
+    box-shadow: var(--shadow);
+    display:flex;
+    flex-direction:column;
+    min-height: 260px;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .project-card:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.6) }
+  
+  .project-image-wrapper{ width:100%; aspect-ratio: 16/9; overflow:hidden; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)) }
+  .project-image{ width:100%; height:100%; object-fit: cover; display:block }
+  
+  .project-content{ padding:16px; display:flex; flex-direction:column; gap:8px; flex:1 }
+  .project-title{ font-size:16px; font-weight:700 }
+  .project-description{ color:var(--muted); font-size:14px; line-height:1.4; word-wrap:break-word; overflow-wrap:break-word }
+  
+  /* skills grid */
+  .skills-grid{
+    display:grid;
+    gap:16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-top:12px;
+  }
+  .skill-card{
+    background: rgba(255,255,255,0.02);
+    border-radius: 10px;
+    padding:14px;
+    border:1px solid rgba(255,255,255,0.03);
+  }
+  .skill-bar-bg{ height:10px; background: rgba(255,255,255,0.02); border-radius:999px; overflow:hidden; margin:8px 0 }
+  .skill-bar{ height:100%; background: linear-gradient(90deg,var(--accent), #8c5cff); width:0%; transition: width 1s ease-out }
+  
+  /* blog grid */
+  .blog-grid{ display:grid; gap:12px; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); margin-top:12px }
+  .blog-card img{ width:100%; height:160px; object-fit:cover; border-radius:8px }
+  
+  /* about grid */
+  .about-grid{ display:grid; grid-template-columns: 1fr 360px; gap:22px; align-items:start; margin-top:12px }
+  .about-text p{ color:var(--muted); margin-bottom:10px; max-width:900px; font-size:15px }
+  .ul{ margin-top:8px; padding-left:18px; color:var(--muted) }
+  
+  /* contact card (aside) */
+  .contact-card{ background: rgba(255,255,255,0.02); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.03) }
+  .contact-form{ display:flex; flex-direction:column; gap:10px; margin-top:8px }
+  .contact-form input, .contact-form textarea{ padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--text); font-family:inherit }
+  .contact-form textarea{ min-height:110px; resize:none }
+  
+  /* footer spacing */
+  .footer{ padding:36px 0; color:var(--muted) }
+  
+  /* reveal animation helpers */
+  .reveal{ opacity:0; transform: translateY(10px); transition: opacity 520ms ease, transform 520ms ease }
+  .reveal.visible{ opacity:1; transform: translateY(0) }
+  
+  /* ===== Responsive rules ===== */
+  
+  /* smaller laptops / tablets: change layout and reserve less space for sidebar */
+  @media (max-width: 1200px){
+    body{ padding-left:200px }
+    .sidebar{ width:200px; padding:20px }
+  }
+  
+  /* tablet and below: hide sidebar, use hamburger and overlay */
+  @media (max-width: 992px){
+    body{ padding-left:0 } /* remove reserved left padding */
+    .sidebar{
+      transform: translateX(-110%);
+      position: fixed;
+      width: 260px;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 60;
+    }
+    .sidebar.active{ transform: translateX(0) }
+  
+    .hamburger{ display:flex; align-items:center; justify-content:center; background:transparent; border-radius:8px; border:none }
+    .overlay{ display:block; opacity:0; pointer-events:none }
+    .overlay.show{ opacity:1; pointer-events:auto }
+  
+    .main{ padding:28px 20px }
+    .main .hero{ align-items:flex-start; text-align:left }
+  }
+  
+  /* small phones: tighter spacing and single column content */
+  @media (max-width: 600px){
+    .main{ padding:20px 14px }
+    .headline{ font-size: clamp(22px, 8vw, 36px) }
+    .projects-grid{ gap:14px }
+    .project-image-wrapper{ aspect-ratio: 3/2 }
+    .about-grid{ grid-template-columns: 1fr; }
+    .contact-card{ order:2 }
+    .profile-seal{ display:none }
+  }
+  
+  /* animate hamburger to cross when sidebar active */
+  .sidebar.active + .app .hamburger span:nth-child(1),
+  .sidebar.active .hamburger span:nth-child(1){ transform: rotate(45deg) translateY(6px) }
+  .sidebar.active .hamburger span:nth-child(2){ opacity:0 }
+  .sidebar.active .hamburger span:nth-child(3){ transform: rotate(-45deg) translateY(-6px) }
+  
+  /* small accessibility helpers */
+  a { color: inherit }
+  .muted-link{ color: var(--accent); text-decoration: none }
+  .small{ font-size:12px }
+  
