@@ -430,11 +430,31 @@
           aspect-ratio: 16 / 10;
           margin-bottom: 12px;
         }
-      }
+        .skill{
+            background:rgba(255,255,255,0.02);
+            border-radius:8px;
+            width: 300px;
+          }
+        #skills h2{
+            text-align: center;
+        }
+        #skills p{
+            text-align: center;
+            width: 240px;
+        }
+            .skills-grid {
+              grid-template-columns: 1fr;
+            }
 
+  .skill .bar {
+    height: 10px; /* Slightly thicker for visibility on mobile */
+    margin-top: 10px;
+  }
 
-      .skill{
-        display: none;
+  .skill .bar > i {
+    width: 20px;
+    border-radius: 10px; /* Match new bar height */
+  }
       }
       .work-p{
         text-align: center;
