@@ -1,291 +1,421 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frontend Dev — Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josephine Jerome — Frontend Developer</title>
+  <meta name="description" content="Frontend developer focusing on accessible, high-performance web interfaces. Portfolio of Josephine Chinedu Jerome." />
+  <meta name="author" content="Josephine Jerome" />
+  <meta name="keywords" content="frontend developer, web developer, React, JavaScript, CSS, HTML, portfolio" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="./img/J.png" type="image/x-icon">
+  <meta property="og:title" content="Josephine Jerome — Frontend Developer" />
+  <meta property="og:description" content="Building interfaces that perform: Frontend development beyond pixels." />
+  <meta property="og:type" content="website" />
 
-  <!-- replace with your css file name if different -->
-  <!-- <link rel="stylesheet" href="./style.css"> -->
-  <link rel="stylesheet" href="./one.css">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@nedu_nony" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="./two.css">
+  <!-- <link rel="stylesheet" href="./portfolio-style.css" /> -->
 </head>
 <body>
-  <!-- Overlay used on small screens when sidebar open -->
-  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <!-- Profile seal top-right -->
+  <div class="profile-seal" aria-hidden="true">
+    <svg class="seal-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+      <defs>
+        <path id="circlePath" d="M60,12a48,48 0 1,1 -0.0001,0z" />
+      </defs>
+      <g transform="translate(0,0)">
+        <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5" />
+        <clipPath id="clip">
+          <circle cx="60" cy="60" r="30" />
+        </clipPath>
+        <image href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><rect width='100%' height='100%' fill='%230b0b0b'/><text x='50%' y='50%' font-size='14' text-anchor='middle' fill='%23cccccc' dy='.35em'>JJ</text></svg>" x="30" y="30" width="60" height="60" clip-path="url(#clip)"></image>
+        <text>
+          <textPath href="#circlePath" startOffset="10" style="font-size:9px; fill:rgba(255,255,255,0.55); letter-spacing:1px;">
+            JOSEPHINE JEROME • FRONTEND DEVELOPER •
+          </textPath>
+        </text>
+      </g>
+    </svg>
+  </div>
 
-  <!-- Fixed sidebar (desktop) / off-canvas (mobile) -->
-  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
-    <div class="sidebar-header">
-      <div class="logo">JJ</div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <nav class="nav" id="primary-nav" aria-label="Primary Navigation">
-      <a href="#intro" class="nav-link active">Intro</a>
-      <a href="#project-header" class="nav-link">Projects</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#blog" class="nav-link">Blog</a>
-      <a href="#about" class="nav-link">About & Contact</a>
-    </nav>
-
-    <!-- small profile seal (keeps your visual) -->
-    <div class="profile-seal" aria-hidden="true">
-      <svg class="seal-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-        <defs><path id="circlePath" d="M60,12a48,48 0 1,1 -0.0001,0z" /></defs>
-        <g>
-          <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="1.5" />
-          <clipPath id="clip"><circle cx="60" cy="60" r="30" /></clipPath>
-          <image href="data:image/svg+xml;utf8,
-            <svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'>
-              <rect width='100%' height='100%' fill='%230b0b0b'/>
-              <text x='50%' y='50%' font-size='14' text-anchor='middle' fill='%23cccccc' dy='.35em'>JJ</text>
-            </svg>" x="30" y="30" width="60" height="60" clip-path="url(#clip)"></image>
-          <text>
-            <textPath href="#circlePath" startOffset="10" style="font-size:8px; fill:rgba(0,0,0,0.5); letter-spacing:1px;">
-              JOSEPHINE JEROME • FRONTEND DEVELOPER •
-            </textPath>
-          </text>
-        </g>
-      </svg>
-    </div>
-  </aside>
-
-  <!-- Main app wrapper -->
   <div class="app">
-    <main class="main" id="intro">
-      <!-- HERO -->
-      <section class="hero reveal">
-        <div class="availability">Open to new opportunities</div>
-        <h1 class="headline">Building interfaces that perform: Frontend development beyond pixels.</h1>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">JJ</div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
 
-        <div class="cta-row">
-          <button class="btn btn-primary" id="contact-btn"><a href="#about">Hire Me</a></button>
-          <button class="btn btn-outline" id="projects-btn"><a href="#project-header">View Projects</a></button>
+      <nav id="primary-nav" aria-label="Primary Navigation">
+        <a href="#intro" class="nav-link active">Intro</a>
+        <a href="#work" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#about" class="nav-link">About & Contact</a>
+      </nav>
+    </aside>
+
+    <!-- Mobile overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Hero Section -->
+      <section class="hero" id="intro">
+        <div class="availability reveal">Open to new opportunities</div>
+        <h1 class="headline reveal">
+          Building interfaces that perform: Frontend development beyond pixels.
+        </h1>
+
+        <div class="cta-row reveal">
+          <button class="btn btn-primary" data-scroll-to="about">Hire Me</button>
+          <button class="btn btn-outline" data-scroll-to="work">View Projects</button>
         </div>
       </section>
 
-      <!-- PROJECTS -->
-      <section id="project-header" class="section reveal">
-        <div class="section-head">
+      <!-- Projects Section -->
+      <section id="work" class="section-projects">
+        <div class="reveal">
           <h2>Selected Projects</h2>
-          <p class="muted">A selection of my recent frontend projects with a focus on performance, accessibility, and delightful UI.</p>
+          <p class="work-description">
+            A selection of my recent frontend projects with a focus on
+            performance, accessibility, and delightful UI.
+          </p>
         </div>
 
         <div class="projects-grid">
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img class="project-image" src="./img/upcijcd.png" alt="WordPress Website">
+          <article class="project reveal">
+            <div class="project-thumb">
+              <img src="./img/upcijcd.png" alt="WordPress Website" loading="lazy" />
             </div>
-            <div class="project-content">
-              <h3 class="project-title">WordPress Website</h3>
-              <p class="project-description muted">Coming Soon...</p>
-            </div>
+            <h3>WordPress Website</h3>
+            <p class="project-description">Coming Soon...</p>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img class="project-image" src="./img/ghfjdkm,s33.png" alt="E-commerce">
+          <article class="project reveal">
+            <div class="project-thumb">
+              <img src="./img/ghfjdkm,s33.png" alt="E-Commerce Website" loading="lazy" />
             </div>
-            <div class="project-content">
-              <h3 class="project-title">E-Commerce Website</h3>
-              <p class="project-description muted">Functional eCommerce site with secure login, product search, dynamic cart, and seamless payment checkout.</p>
-            </div>
+            <a href="https://neducod.github.io/fresh-mate/" target="_blank" rel="noopener noreferrer">
+              <h3>E-Commerce Website</h3>
+              <p class="project-description">
+                Functional eCommerce site with secure login, product search, dynamic cart, and seamless payment checkout.
+              </p>
+            </a>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img class="project-image" src="./img/itnrfd55r.png" alt="WiseWrite">
+          <article class="project reveal">
+            <div class="project-thumb">
+              <img src="./img/itnrfd55r.png" alt="WiseWrite" loading="lazy" />
             </div>
-            <div class="project-content">
-              <h3 class="project-title">WiseWrite</h3>
-              <p class="project-description muted">A simple and efficient word and character counter that instantly calculates text length, helping users track content and improve writing precision.</p>
-            </div>
+            <a href="https://neducod.github.io/wise-write/" target="_blank" rel="noopener noreferrer">
+              <h3>WiseWrite</h3>
+              <p class="project-description">
+                A simple and efficient word and character counter that instantly calculates text length, helping users track content and improve writing precision.
+              </p>
+            </a>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img class="project-image" src="./img/glowheave.png" alt="Glow Heaven">
+          <article class="project reveal">
+            <div class="project-thumb">
+              <img src="./img/glowheave.png" alt="Glow Heaven" loading="lazy" />
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Glow Heaven</h3>
-              <p class="project-description muted">A static landing page for a cosmetic product.</p>
-            </div>
+            <a href="https://neducod.github.io/glow-heaven/" target="_blank" rel="noopener noreferrer">
+              <h3>Glow Heaven</h3>
+              <p class="project-description">A static landing page for a cosmetic product</p>
+            </a>
           </article>
         </div>
       </section>
 
-      <!-- SKILLS -->
-      <section id="skills" class="section reveal">
-        <div class="section-head">
+      <!-- Skills Section -->
+      <section id="skills" class="section-skills reveal">
+        <div>
           <h2>Skills</h2>
-          <p class="muted">The tools and technologies I’ve been learning and using to build clean, functional web projects.</p>
+          <p class="skills-intro">
+            The tools and technologies I've been learning and using to build
+            clean, functional web projects.
+          </p>
         </div>
 
         <div class="skills-grid">
-          <div class="skill-card reveal">
+          <div class="skill">
             <strong>HTML & Accessibility</strong>
-            <div class="skill-bar-bg"><div class="skill-bar" style="width:0%" data-fill="85"></div></div>
-            <p class="muted small">Writing clean, semantic markup that’s easy to maintain and accessible to everyone.</p>
+            <div class="bar"><i data-fill="85"></i></div>
+            <p class="skill-description">
+              Writing clean, semantic markup that's easy to maintain and accessible to everyone.
+            </p>
           </div>
 
-          <div class="skill-card reveal">
+          <div class="skill">
             <strong>CSS & Responsive Design</strong>
-            <div class="skill-bar-bg"><div class="skill-bar" style="width:0%" data-fill="80"></div></div>
-            <p class="muted small">Building flexible layouts using Flexbox, Grid, and modern CSS techniques.</p>
+            <div class="bar"><i data-fill="80"></i></div>
+            <p class="skill-description">
+              Building flexible layouts using Flexbox, Grid, and modern CSS techniques.
+            </p>
           </div>
 
-          <div class="skill-card reveal">
+          <div class="skill">
             <strong>JavaScript (ES6+)</strong>
-            <div class="skill-bar-bg"><div class="skill-bar" style="width:0%" data-fill="70"></div></div>
-            <p class="muted small">Adding interactivity, animations, and logic to make sites dynamic and engaging.</p>
+            <div class="bar"><i data-fill="70"></i></div>
+            <p class="skill-description">
+              Adding interactivity, animations, and logic to make sites dynamic and engaging.
+            </p>
+          </div>
+
+          <div class="skill">
+            <strong>Version Control (Git & GitHub)</strong>
+            <div class="bar"><i data-fill="65"></i></div>
+            <p class="skill-description">
+              Comfortable managing code with Git, branching, and pushing to GitHub.
+            </p>
+          </div>
+
+          <div class="skill">
+            <strong>Learning Next: React & Frameworks</strong>
+            <div class="bar"><i data-fill="55"></i></div>
+            <p class="skill-description">
+              Currently learning component-based development and reusable UI logic.
+            </p>
+          </div>
+
+          <div class="skill">
+            <strong>Design Tools & UI Sense</strong>
+            <div class="bar"><i data-fill="60"></i></div>
+            <p class="skill-description">
+              Basic knowledge of Figma and color/typography principles for modern design.
+            </p>
           </div>
         </div>
       </section>
 
-      <!-- BLOG -->
-      <section id="blog" class="section reveal">
-        <div class="section-head">
+      <!-- Blog Section -->
+      <section id="blog" class="section-blog reveal">
+        <div class="blog-header">
           <h2>Blog</h2>
-          <p class="muted">Short posts on frontend patterns, performance, and small experiments. (Placeholder)</p>
+          <p class="blog-description">
+            Short posts on frontend patterns, performance, and small experiments.
+          </p>
         </div>
 
         <div class="blog-grid">
-          <div class="blog-card">
-            <a href="https://josephinejeromehowtocenteradiv.hashnode.dev/"><img src="./img/ghfjdmr.png" alt=""></a>
+            <div class="blog-item">
+              <a href="https://josephinejeromehowtocenteradiv.hashnode.dev/" target="_blank" rel="noopener noreferrer">
+                <img src="./img/ghfjdmr.png" alt="How to Center a Div" loading="lazy" />
+              </a>
+            </div>
+  
+            <div class="blog-item">
+              <a href="https://josephinewritesoncss.hashnode.dev/" target="_blank" rel="noopener noreferrer">
+                <img src="./img/fgdhjksmn.png" alt="CSS Fundamentals" loading="lazy" />
+              </a>
+            </div>
           </div>
-          <div class="blog-card">
-            <a href="https://josephinewritesoncss.hashnode.dev/"><img src="./img/fgdhjksmn.png" alt=""></a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT & CONTACT -->
-      <section id="about" class="section reveal">
-        <div class="section-head">
+        </section>
+  
+        <!-- About & Contact Section -->
+        <section id="about" class="section-about reveal">
           <h2>About & Contact</h2>
-          <p class="muted">Hi, I’m a frontend developer focusing on accessible, high-performance web interfaces. I enjoy turning designs into polished, usable products and improving developer workflows.</p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-text">
-            <!-- (kept your about copy) -->
-            <p class="muted">Hi, I’m Josephine Chinedu Jerome — a frontend web developer from Nigeria passionate about building clean, user-friendly, and meaningful digital experiences.</p>
-            <p class="muted">I started coding in 2023, and since then, I’ve been constantly improving my skills through hands-on learning, projects, and online courses like AltSchool Africa’s Frontend Engineering program, where I graduated from. I love bringing ideas to life with HTML, CSS, JavaScript, and React, and I’m currently learning more about Firebase, WordPress, and email development to expand my skill set.</p>
-
-            <ul class="ul">
-              <li>Sharpening my JavaScript and React skills</li>
-              <li>Building my portfolio projects</li>
-              <li>Exploring freelance opportunities on platforms like Freelancer and Fiverr</li>
-              <li>Creating software that impacts at least 200 users someday</li>
-            </ul>
-
-            <p class="muted">Connect: <a href="https://linktr.ee/josephinechinedujerome" class="muted-link">Link Tree</a> • <a href="#" class="muted-link">Hashnode</a> • <a href="https://x.com/nedu_nony" class="muted-link">Twitter</a></p>
+  
+          <div class="about-container">
+            <div class="about-text">
+              <p class="intro-highlight">
+                Hi, I'm a frontend developer focusing on accessible,
+                high-performance web interfaces. I enjoy turning designs into
+                polished, usable products and improving developer workflows.
+              </p>
+  
+              <p>
+                Hi, I'm Josephine Chinedu Jerome — a frontend web developer from
+                Nigeria passionate about building clean, user-friendly, and
+                meaningful digital experiences.
+              </p>
+  
+              <p>
+                I started coding in 2023, and since then, I've been constantly
+                improving my skills through hands-on learning, projects, and online
+                courses like AltSchool Africa's Frontend Engineering program, where
+                I graduated from. I love bringing ideas to life with HTML, CSS,
+                JavaScript, and React, and I'm currently learning more about
+                Firebase, WordPress, and email development to expand my skill set.
+              </p>
+  
+              <p>
+                My long-term goal is to grow as a developer, land freelance gigs,
+                internships, or a frontend role, and eventually build solutions that
+                real people can use — like the grocery store web app I'm making for
+                my mom. I'm also learning to balance creativity, design, and
+                performance to make every project feel smooth and visually pleasing.
+              </p>
+  
+              <p>
+                Beyond coding, I'm documenting my journey as a 17-year-old chasing
+                her dreams — through journaling, voice recordings, and vlogs —
+                because I believe every step of growth deserves to be remembered.
+              </p>
+  
+              <div class="focus-list">
+                <p class="focus-title">I'm currently focused on:</p>
+                <ul>
+                  <li>Sharpening my JavaScript and React skills</li>
+                  <li>Building my portfolio projects</li>
+                  <li>Exploring freelance opportunities on platforms like Freelancer and Fiverr</li>
+                  <li>And creating software that impacts at least 200 users someday</li>
+                  <li>When I'm not coding, you'll probably find me reading, listening to music, learning something new, or exploring ideas that help me become smarter and more confident every day.</li>
+                  <li>Let's build something great together 🌷</li>
+                </ul>
+              </div>
+  
+              <div class="contact-section">
+                <h3>Get in Touch</h3>
+                <p class="contact-intro">
+                  I'm always open to new opportunities, collaborations, or just
+                  chatting about web development. Feel free to send a message below.
+                  I'll get back to you as soon as I can!
+                </p>
+  
+                <form id="contact-form" aria-label="Contact form">
+                  <input type="text" name="name" placeholder="Your name" required />
+                  <input type="email" name="email" placeholder="Email" required />
+                  <textarea name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+                  <button class="btn btn-primary" type="submit">Send message</button>
+                </form>
+              </div>
+  
+              <p class="social-links">
+                Connect:
+                <a href="https://linktr.ee/josephinechinedujerome" target="_blank" rel="noopener noreferrer">Link Tree</a> •
+                <a href="https://josephinejeromehowtocenteradiv.hashnode.dev/" target="_blank" rel="noopener noreferrer">Hashnode</a> •
+                <a href="https://x.com/nedu_nony" target="_blank" rel="noopener noreferrer">Twitter</a>
+              </p>
+            </div>
           </div>
+        </section>
+      </main>
+    </div>
+  
+    <!-- <script src="./portfolio-script.js"></script> -->
+    <script>
+      // Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const navLinks = document.querySelectorAll('.nav-link');
 
-          <aside class="contact-card">
-            <h3>Get in Touch</h3>
-            <p class="muted small">I’m always open to new opportunities, collaborations, or just chatting about web development. Feel free to send a message below.</p>
+// Toggle sidebar on mobile
+hamburger.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+  sidebarOverlay.classList.toggle('active');
+});
 
-            <form id="contact-form" class="contact-form" aria-label="Contact form">
-              <input type="text" name="name" placeholder="Your name" required>
-              <input type="email" name="email" placeholder="Email" required>
-              <textarea name="message" rows="5" placeholder="Tell me about your project" required></textarea>
-              <button class="btn btn-primary" type="submit">Send message</button>
-            </form>
-          </aside>
-        </div>
-      </section>
-    </main>
-  </div>
+// Close sidebar when clicking overlay
+sidebarOverlay.addEventListener('click', () => {
+  sidebar.classList.remove('active');
+  sidebarOverlay.classList.remove('active');
+});
 
-  <!-- small inline script for navigation, reveal and sidebar toggle -->
-  <script>
-    // Sidebar toggle (mobile)
-    const sidebar = document.getElementById('sidebar');
-    const hamburger = document.getElementById('hamburger');
-    const overlay = document.getElementById('overlay');
+// Close sidebar when clicking nav link on mobile
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    sidebarOverlay.classList.remove('active');
+  });
+});
 
-    function openSidebar() {
-      sidebar.classList.add('active');
-      overlay.classList.add('show');
-      hamburger.setAttribute('aria-expanded', 'true');
+// Smooth scroll on nav click
+document.querySelectorAll('a.nav-link').forEach(a => {
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// IntersectionObserver to highlight active nav and reveal sections
+const sections = document.querySelectorAll('main section');
+
+// Reveal on scroll
+const revealItems = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
     }
-    function closeSidebar() {
-      sidebar.classList.remove('active');
-      overlay.classList.remove('show');
-      hamburger.setAttribute('aria-expanded', 'false');
+  });
+}, { threshold: 0.1 });
+
+revealItems.forEach(i => ro.observe(i));
+
+// Active nav link
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    const link = document.querySelector(`a.nav-link[href="#${id}"]`);
+    if (entry.isIntersecting) {
+      navLinks.forEach(n => n.classList.remove('active'));
+      if (link) link.classList.add('active');
     }
+  });
+}, { threshold: [0.5] });
 
-    hamburger.addEventListener('click', () => {
-      if (sidebar.classList.contains('active')) closeSidebar(); else openSidebar();
-    });
-    overlay.addEventListener('click', closeSidebar);
+sections.forEach(s => obs.observe(s));
 
-    // Smooth scroll for nav links
-    document.querySelectorAll('.nav-link').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const href = a.getAttribute('href');
-        if (!href || !href.startsWith('#')) return;
-        e.preventDefault();
-        closeSidebar();
-        const id = href.slice(1);
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// Animate skill bars when skills section visible
+const skillsSection = document.getElementById('skills');
+const skillsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.skill .bar i').forEach(el => {
+        const pct = el.getAttribute('data-fill') || 70;
+        el.style.width = pct + '%';
       });
-    });
+      skillsObserver.disconnect();
+    }
+  });
+}, { threshold: 0.25 });
 
-    // Reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    const ro = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(r => ro.observe(r));
+if (skillsSection) skillsObserver.observe(skillsSection);
 
-    // Skill bars animation when visible
-    const skills = document.querySelectorAll('.skill-bar');
-    const skillsObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          skills.forEach(s => {
-            const pct = s.getAttribute('data-fill') || 70;
-            s.style.width = pct + '%';
-          });
-          obs.disconnect();
-        }
-      });
-    }, { threshold: 0.25 });
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) skillsObserver.observe(skillsSection);
+// Contact form handler
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', (ev) => {
+  ev.preventDefault();
+  alert('Thanks — message captured (this is a demo).');
+  ev.target.reset();
+});
 
-    // Contact form stub
-    document.getElementById('contact-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Thanks — message captured (demo).');
-      e.target.reset();
-    });
-
-    // Keep active nav link while scrolling
-    const sections = document.querySelectorAll('main section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const activeObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const id = entry.target.id;
-        const link = document.querySelector(`.nav-link[href="#${id}"]`);
-        if (entry.isIntersecting) {
-          navLinks.forEach(n => n.classList.remove('active'));
-          if (link) link.classList.add('active');
-        }
-      });
-    }, { threshold: 0.5 });
-    sections.forEach(s => activeObs.observe(s));
-  </script>
-</body>
-</html>
+// CTA buttons scroll
+const ctaButtons = document.querySelectorAll('[data-scroll-to]');
+ctaButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const targetId = button.getAttribute('data-scroll-to');
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+      if (targetId === 'about') {
+        setTimeout(() => {
+          const nameInput = document.querySelector('input[name="name"]');
+          if (nameInput) nameInput.focus();
+        }, 800);
+      }
+    }
+  });
+});
+    </script>
+  </body>
+  </html>
+  
