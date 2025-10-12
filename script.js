@@ -1,3 +1,4 @@
+/*
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
@@ -7,7 +8,7 @@ hamburger.addEventListener('click', () => {
 });
 
 
-
+*/
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -129,3 +130,27 @@ ltrs.forEach((ltr) => {
     setTimeout(() => items[idx].classList.add('show'), 50);
   }, visibleMs + transitionMs);
 })();
+
+
+
+
+
+
+
+  const hamburger = document.querySelector('.hamburger');
+  const sidebar = document.querySelector('.sidebar');
+
+  // Create overlay
+  const overlay = document.createElement('div');
+  overlay.classList.add('overlay');
+  document.body.appendChild(overlay);
+
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('show');
+  });
+
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('show');
+  });
