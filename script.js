@@ -60,3 +60,72 @@ form.addEventListener('submit', async (e) => {
         setTimeout(() => toast.classList.remove('show'), 4000);
     }
 });
+
+
+
+
+
+
+
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+    cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
+});
+
+document.addEventListener('click', e => {
+    cursor.classList.add("expand");
+    setTimeout(() => {
+        cursor.classList.remove("expand");
+    }, 500);
+});
+
+
+
+
+/*
+
+const gradientText = document.querySelector(".gradient-text");
+
+gradientText.innerHTML = gradientText.innerText
+  .split("")
+  .map((ltr, idx) => {
+    return `<span class="ltr" style="--delay: ${idx * 100}ms">${ltr}</span>`;
+  })
+  .join("");
+
+console.log(gradientText);
+
+const ltrs = document.querySelectorAll(".gradient-text .ltr");
+
+ltrs.forEach((ltr) => {
+  ltr.addEventListener("animationend", () => {
+    ltr.classList.add("show");
+  });
+});
+
+
+*/
+
+
+
+
+
+(function(){
+  const rotator = document.getElementById('rot');
+  const items = Array.from(rotator.querySelectorAll('span'));
+  let idx = 0;
+  const visibleMs = 2500; // how long each text stays visible
+  const transitionMs = 400; // must match CSS transition
+
+  // show first immediately
+  items.forEach((s, i) => s.classList.remove('show'));
+  items[idx].classList.add('show');
+
+  setInterval(() => {
+    items[idx].classList.remove('show');
+    idx = (idx + 1) % items.length;
+    // small timeout to allow exit transition before entering (optional)
+    setTimeout(() => items[idx].classList.add('show'), 50);
+  }, visibleMs + transitionMs);
+})();

@@ -1,458 +1,730 @@
-<!DOCTYPE html>
+<!-- index.html -->
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Josephine Tech - Frontend Developer Portfolio</title>
-    <meta name="description" content="Frontend Developer specializing in React, Tailwind CSS, and modern web technologies. View my portfolio of creative web projects." />
-    <meta name="author" content="Josephine Tech" />
-    
-    <meta property="og:title" content="Josephine Tech - Frontend Developer" />
-    <meta property="og:description" content="Frontend Developer creating beautiful, responsive web experiences" />
-    <meta property="og:type" content="website" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <!-- AOS CSS -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link rel="shortcut icon" href="./img/J.png" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Frontend Dev — Portfolio</title>
 
+  <!-- Google font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+
+  <link rel="shortcut icon" href="./img/J.png" type="image/x-icon">
+  <!--  --
+  <style>
+
+    :root{
+      --bg:#070707;
+      --panel:#0f0f0f;
+      --accent:#00F0E0; /* bright cyan */
+      --cream:#EADFCF;
+      --muted:#BDBDBD;
+      --max-width:1100px;
+      --smooth: 250ms cubic-bezier(.2,.9,.3,1);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--cream);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.35;
+      overflow-x:hidden;
+    }
+
+    /* layout */
+    .app {
+      display:flex;
+      min-height:100vh;
+      max-width:calc(var(--max-width) + 300px);
+      margin:0 auto;
+      gap:32px;
+      padding:48px 24px;
+      align-items:flex-start;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      position:sticky;
+      top:32px;
+      align-self:flex-start;
+      width:220px;
+      padding-right:16px;
+      flex:0 0 220px;
+    }
+
+    .logo {
+      font-weight:700;
+      letter-spacing:1px;
+      color:var(--cream);
+      font-size:13px;
+      margin-bottom:28px;
+    }
+
+    nav{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:500;
+      padding:6px 8px;
+      border-radius:6px;
+      transition:color var(--smooth), background var(--smooth), transform var(--smooth);
+    }
+
+    nav a:hover{ color:var(--cream); transform:translateX(4px) }
+    nav a.active{
+      color:var(--accent);
+      font-weight:700;
+      position:relative;
+    }
+    nav a.active::before{
+      content:"–";
+      margin-right:8px;
+      color:var(--accent);
+      font-weight:700;
+      position:absolute;
+      left:-14px;
+      top:6px;
+    }
+
+    /* Main content column */
+    .main {
+      flex:1 1 auto;
+      max-width:var(--max-width);
+    }
+
+    .hero {
+      padding:24px 12px 48px 12px;
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+      align-items:flex-start;
+    }
+
+    .availability {
+      color:var(--accent);
+      font-weight:600;
+      font-size:14px;
+      letter-spacing:0.2px;
+    }
+
+    .headline {
+      font-size:64px;
+      line-height:0.95;
+      font-weight:700;
+      color:var(--cream);
+      margin:0;
+      max-width:980px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-top:14px;
+    }
+
+    .btn {
+      padding:14px 26px;
+      border-radius:16px;
+      border:0;
+      font-weight:700;
+      cursor:pointer;
+      transition:transform var(--smooth), box-shadow var(--smooth);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:#020202;
+    }
+    .btn-primary:hover{ transform:translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.5); }
+
+    .btn-outline{
+      background:transparent;
+      color:var(--cream);
+      border:2px solid rgba(234,223,207,0.25);
+      padding:12px 22px;
+    }
+    .btn-outline:hover{ transform:translateY(-3px); border-color:rgba(234,223,207,0.45) }
+
+    /* top-right profile seal */
+    .profile-seal{
+      position: absolute;
+      right:48px;
+      top:48px;
+      width:120px;
+      height:120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;
+    }
+    .seal-svg{ width:120px; height:120px; }
+
+    /* sections */
+    section{
+      padding:48px 12px;
+      margin-bottom:36px;
+      scroll-margin-top:64px;
+    }
+
+    .projects-grid{
+      display:grid;
+      gap:18px;
+      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+      margin-top:18px;
+    }
+    .project{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      padding:12px;
+      overflow:hidden;
+      min-height:160px;
+      transition:transform var(--smooth),box-shadow var(--smooth);
+    }
+    .project:hover{ transform:translateY(-8px); box-shadow:0 18px 36px rgba(0,0,0,0.6) }
+
+    .project-thumb{
+      background:#121212;
+      border-radius:8px;
+      height:110px;
+      display:block;
+      margin-bottom:10px;
+    }
+
+    /* timeline & skills */
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+    .timeline-item{
+      background:transparent;
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+    }
+    .timeline-item .dot{
+      width:10px; height:10px; border-radius:50%; background:var(--accent); margin-top:6px;
+    }
+    .skills-grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    }
+    .skill{
+      background:rgba(255,255,255,0.02);
+      padding:12px;
+      border-radius:8px;
+    }
+    .skill .bar{
+      height:8px;
+      background:rgba(255,255,255,0.06);
+      border-radius:6px;
+      overflow:hidden;
+      margin-top:8px;
+    }
+    .skill .bar > i{
+      display:block;
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg,var(--accent), #33c3d6);
+      border-radius:6px;
+      transition:width 900ms cubic-bezier(.2,.9,.3,1);
+    }
+
+    /* testimonials/cards */
+    .cards{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    .card{
+      padding:16px;
+      border-radius:10px;
+      background:rgba(255,255,255,0.02);
+    }
+
+    /* contact form */
+    form{ display:grid; gap:12px; max-width:520px; }
+    input, textarea{
+      padding:12px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.02);
+      color:var(--cream);
+      border:1px solid rgba(255,255,255,0.04);
+      font-size:14px;
+    }
+
+    /* reveal animation helper */
+    .reveal{
+      opacity:0;
+      transform:translateY(14px);
+      transition:opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* responsive */
+    @media (max-width:900px){
+      .app{ padding:24px 18px; gap:18px; }
+      .sidebar{ position:relative; width:100%; top:auto; display:flex; align-items:center; justify-content:space-between; padding:0 6px 18px 0; flex:0 0 auto; }
+      nav{ flex-direction:row; gap:10px; overflow:auto; padding-bottom:6px; }
+      .logo{ font-size:13px; margin-right:8px }
+      .main{ padding-top:18px }
+      .headline{ font-size:40px }
+      .profile-seal{ right:12px; top:12px; width:84px; height:84px; }
+    }
+
+    @media (max-width:480px){
+      .headline{ font-size:28px }
+      .cta-row{ flex-direction:column; align-items:stretch }
+      .btn{ width:100% }
+      .sidebar{ padding-bottom:12px }
+    }
+
+  </style>
+-- / -->
 </head>
 <body>
-    <header class="navbar">
-        <div class="nav-container">
-          <div class="logo">Josephine<span>💻</span></div>
-    
-          <nav class="nav-links" id="navLinks">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </nav>
-    
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+  <!-- Profile seal top-right -->
+  <div class="profile-seal" aria-hidden="true">
+    <!-- small svg circle with text path for name -->
+    <svg class="seal-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+      <defs>
+        <path id="circlePath" d="M60,12a48,48 0 1,1 -0.0001,0z" />
+      </defs>
+      <g transform="translate(0,0)">
+        <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5" />
+        <clipPath id="clip">
+          <circle cx="60" cy="60" r="30" />
+        </clipPath>
+        <!-- Placeholder profile image: replace src with your own -->
+        <image href="data:image/svg+xml;utf8,
+          <svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'>
+            <rect width='100%' height='100%' fill='%230b0b0b'/>
+            <text x='50%' y='50%' font-size='14' text-anchor='middle' fill='%23cccccc' dy='.35em'>JJ</text>
+          </svg>" x="30" y="30" width="60" height="60" clip-path="url(#clip)"></image>
+
+        <text>
+          <textPath href="#circlePath" startOffset="10" side="left" style="font-size:9px; fill:rgba(255,255,255,0.55); letter-spacing:1px;">
+            JOSEPHINE JEROME • FRONTEND DEVELOPER •
+          </textPath>
+        </text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="app">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar" aria-label="Primary">
+      <div class="logo">JJ</div>
+
+      <nav id="primary-nav" aria-label="Primary Navigation">
+        <a href="#intro" class="nav-link active">Intro</a>
+        <a href="#work" class="nav-link">Projetcs</a>
+        <!-- <a href="#experience" class="nav-link">Experience</a> -->
+        <a href="#skills" class="nav-link">Skills</a>
+        <!-- <a href="#references" class="nav-link">References</a> -->
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#about" class="nav-link">About & Contact</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN COLUMN -->
+    <main class="main">
+
+      <!-- HERO / INTRO -->
+      <section id="intro" class="hero">
+        <div class="availability reveal">Open to new opportunities</div>
+        <h1 class="headline reveal">Building interfaces that perform: Frontend development beyond pixels.</h1>
+
+        <div class="cta-row reveal">
+          <button class="btn btn-primary" id="contact-btn"><a href="#about">Hire Me</a></button>
+          <button class="btn btn-outline" id="projects-btn"><a href="#">View Projects</a></button>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section id="work" class="reveal">
+        <h2>Selected Projects</h2>
+        <p style="color:var(--muted)">A selection of my recent frontend projects with a focus on performance, accessibility, and delightful UI.</p>
+
+        <div class="projects-grid">
+          <article class="project reveal">
+            <div class="project-thumb">
+                <img src="./img/upcijcd.png" alt="">
+            </div>
+            <h3>WordPress Website</h3>
+            <p style="color:var(--muted)">Coming Soon...</p>
+          </article>
+
+          <!-- <a href="https://neducod.github.io/fresh-mate/" target="_blank">
+            <article class="project reveal">
+                <div class="project-thumb">
+                    <img src="./img/ghfjdkm,s33.png" alt="">
+                </div>
+                <h3>E-Commerce Website</h3>
+                <p style="color:var(--muted)">Functional eCommerce site with secure login, product search, dynamic cart, and seamless payment checkout.</p>
+              </article>
+          </a> -->
+
+        
+          <article class="project reveal">
+            <div class="project-thumb">
+                <img src="./img/ghfjdkm,s33.png" alt="">
+            </div>
+            <a href="https://neducod.github.io/fresh-mate/" target="_blank" >
+                <h3>E-Commerce Website</h3>
+                <p style="color:var(--muted)">Functional eCommerce site with secure login, product search, dynamic cart, and seamless payment checkout.</p>
+            </a>
+          </article>
+         
+          <article class="project reveal">
+            <div class="project-thumb">
+                <img src="./img/itnrfd55r.png" alt="">
+            </div>
+            <a href=" https://neducod.github.io/wise-write/">
+                <h3>WiseWrite</h3>
+                <p style="color:var(--muted)">A simple and efficient word and character counter that instantly calculates text length, helping users track content and improve writing precision.</p>
+            </a>
+          </article>
+          
+          <article class="project reveal">
+            <div class="project-thumb">
+                <img src="./img/glowheave.png" alt="">
+            </div>
+            <a href="https://neducod.github.io/glow-heaven/">
+                <h3>Glow Heaven</h3>
+                <p style="color:var(--muted)">A static landing page for a cosmetic product</p>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <!-- <section id="experience" class="reveal">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="dot" aria-hidden="true"></div>
+            <div>
+              <strong>Senior Frontend Engineer — Acme Co.</strong>
+              <div style="color:var(--muted); font-size:14px">2021 — Present</div>
+              <p style="color:var(--muted)">Led UI rewrite, improved Lighthouse performance, introduced component-driven workflow.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="dot" aria-hidden="true"></div>
+            <div>
+              <strong>Frontend Developer — Startup X</strong>
+              <div style="color:var(--muted); font-size:14px">2018 — 2021</div>
+              <p style="color:var(--muted)">Built responsive web apps, ship features quickly while keeping accessibility in focus.</p>
+            </div>
           </div>
         </div>
-      </header>
+      </section> -->
 
-     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title fade-in-up">
-                Hi, I'm <span class="gradient-text">Josephine</span>
-            </h1>
-            <p class="hero-subtitle fade-in-up" style="animation-delay: 0.1s">
-                Frontend Developer
-            </p>
-            <p class="hero-description fade-in-up" style="animation-delay: 0.2s">
-                I create beautiful, responsive web experiences that bring ideas to life
-            </p>
-            <button onclick="scrollToSection('projects')" class="btn btn-primary fade-in-up" style="animation-delay: 0.3s">
-                <a href="#projects">View My Work</a>
-                <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-            </button>
+<!-- 
+        <section id="experience" class="reveal">
+        <h2>My Journey</h2>
+        <p style="color:var(--muted); max-width:700px;">
+          I’m a self-taught frontend developer passionate about creating beautiful, responsive, and accessible web interfaces.
+          My journey started with curiosity about how websites work — which quickly turned into a love for turning ideas into code.
+        </p>
+        <p style="color:var(--muted); max-width:700px;">
+          I’ve spent time learning core web technologies like <strong>HTML, CSS, and JavaScript</strong>, and I’m continually improving my
+          skills through hands-on projects, open-source contributions, and community resources.
+        </p>
+        <p style="color:var(--muted); max-width:700px;">
+          My goal is to join a team where I can grow, collaborate, and build products that users actually love.
+        </p>
+      </section>
+ -->
+
+      <!-- SKILLS --
+      <section id="skills" class="reveal">
+        <h2>Skills</h2>
+        <p style="color:var(--muted)">Technical skills and modern toolchain.</p>
+
+        <div class="skills-grid">
+          <div class="skill">
+            <strong>HTML & Accessibility</strong>
+            <div class="bar"><i data-fill="95"></i></div>
+          </div>
+          <div class="skill">
+            <strong>CSS / Layout / Animations</strong>
+            <div class="bar"><i data-fill="92"></i></div>
+          </div>
+          <div class="skill">
+            <strong>JavaScript & Tooling</strong>
+            <div class="bar"><i data-fill="90"></i></div>
+          </div>
+          <div class="skill">
+            <strong>React / SPA</strong>
+            <div class="bar"><i data-fill="85"></i></div>
+          </div>
+          <div class="skill">
+            <strong>Testing / CI</strong>
+            <div class="bar"><i data-fill="78"></i></div>
+          </div>
+          <div class="skill">
+            <strong>Performance / SEO</strong>
+            <div class="bar"><i data-fill="88"></i></div>
+          </div>
         </div>
-    </section>
+      </section> -->
 
-    <!-- About Section -->
-    <section id="about" class="section section-card">
-        <div class="container">
-            <h2 class="section-title">
-                About <span class="gradient-text">Me</span>
-            </h2>
-            
-            <div class="about-description">
-                <p>
-                    I'm a passionate frontend developer with 2+ years of experience in creating beautiful, 
-                    functional web applications. I specialize in React, Tailwind CSS, and modern JavaScript, 
-                    turning complex problems into simple, elegant solutions.
+      <!-- SKILLS -->
+<section id="skills" class="reveal">
+    <h2>Skills</h2>
+    <p style="color:var(--muted); max-width:700px;">
+      The tools and technologies I’ve been learning and using to build clean, functional web projects.
+    </p>
+  
+    <div class="skills-grid">
+      <div class="skill">
+        <strong>HTML & Accessibility</strong>
+        <div class="bar"><i data-fill="85"></i></div>
+        <p style="color:var(--muted); font-size:13px;">Writing clean, semantic markup that’s easy to maintain and accessible to everyone.</p>
+      </div>
+  
+      <div class="skill">
+        <strong>CSS & Responsive Design</strong>
+        <div class="bar"><i data-fill="80"></i></div>
+        <p style="color:var(--muted); font-size:13px;">Building flexible layouts using Flexbox, Grid, and modern CSS techniques.</p>
+      </div>
+  
+      <div class="skill">
+        <strong>JavaScript (ES6+)</strong>
+        <div class="bar"><i data-fill="70"></i></div>
+        <p style="color:var(--muted); font-size:13px;">Adding interactivity, animations, and logic to make sites dynamic and engaging.</p>
+      </div>
+  
+      <div class="skill">
+        <strong>Version Control (Git & GitHub)</strong>
+        <div class="bar"><i data-fill="65"></i></div>
+        <p style="color:var(--muted); font-size:13px;">Comfortable managing code with Git, branching, and pushing to GitHub.</p>
+      </div>
+  
+      <div class="skill">
+        <strong>Learning Next: React & Frameworks</strong>
+        <div class="bar"><i data-fill="55"></i></div>
+        <p style="color:var(--muted); font-size:13px;">Currently learning component-based development and reusable UI logic.</p>
+      </div>
+  
+      <div class="skill">
+        <strong>Design Tools & UI Sense</strong>
+        <div class="bar"><i data-fill="60"></i></div>
+        <p style="color:var(--muted); font-size:13px;">Basic knowledge of Figma and color/typography principles for modern design.</p>
+      </div>
+    </div>
+  </section>
+  
+
+      <!-- REFERENCES -->
+      <!-- <section id="references" class="reveal">
+        <h2>References</h2>
+        <div class="cards">
+          <div class="card reveal">
+            <strong>Design Lead, Acme</strong>
+            <p style="color:var(--muted)">"Delivered consistent components and a huge uplift in accessibility — great collaborator."</p>
+          </div>
+          <div class="card reveal">
+            <strong>CTO, Startup X</strong>
+            <p style="color:var(--muted)">"Fast, pragmatic, and always shipped with quality."</p>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- LEARNING & GOALS -->
+<!-- <section id="references" class="reveal">
+    <h2>Learning & Goals</h2>
+    <p style="color:var(--muted); max-width:700px;">
+      I’m continuously improving my frontend skills and expanding my understanding of web technologies.
+      Right now, I’m focusing on building stronger JavaScript fundamentals and learning modern frameworks like <strong>React</strong>.
+    </p>
+  
+    <p style="color:var(--muted); max-width:700px;">
+      My short-term goal is to contribute to real-world projects where I can collaborate with other developers, 
+      write clean code, and learn best practices. Long-term, I want to specialize in creating fast, accessible, and visually engaging web experiences.
+    </p>
+  </section>
+   -->
+
+      <!-- BLOG -->
+      <section id="blog" class="reveal">
+        <h2>Blog</h2>
+        <p style="color:var(--muted)">Short posts on frontend patterns, performance, and small experiments. (Placeholder)</p>
+        <div>
+            <div class="project">
+                <a href="https://josephinejeromehowtocenteradiv.hashnode.dev/">
+                    <img src="./img/ghfjdmr.png" alt="">
+                </a>
+            </div>
+            <div class="project">
+               <a href="https://josephinewritesoncss.hashnode.dev/">
+                <img src="./img/fgdhjksmn.png" alt="">
+               </a>
+            </div>
+            <!-- <div class="project"></div> -->
+        </div>
+      </section>
+
+      <!-- ABOUT & CONTACT -->
+      <section id="about" class="reveal">
+        <h2>About & Contact</h2>
+        <div style="display:grid; grid-template-columns:1fr 360px; gap:24px; align-items:start;">
+          <div>
+            <p style="color:var(--muted)">Hi, I’m a frontend developer focusing on accessible, high-performance web interfaces. I enjoy turning designs into polished, usable products and improving developer workflows.</p>
+            <p>Hi, I’m Josephine Chinedu Jerome — a frontend web developer from Nigeria passionate about building clean, user-friendly, and meaningful digital experiences.</p>
+            <p> I started coding in 2023, and since then, I’ve been constantly improving my skills through hands-on learning, projects, and online courses like AltSchool Africa’s Frontend Engineering program, where I graduated from. I love bringing ideas to life with HTML, CSS, JavaScript, and React, and I’m currently learning more about Firebase, WordPress, and email development to expand my skill set.</p>
+            <p>My long-term goal is to grow as a developer, land freelance gigs, internships, or a frontend role, and eventually build solutions that real people can use — like the grocery store web app I’m making for my mom. I’m also learning to balance creativity, design, and performance to make every project feel smooth and visually pleasing.</p>
+            <p> Beyond coding, I’m documenting my journey as a 17-year-old chasing her dreams — through journaling, voice recordings, and vlogs — because I believe every step of growth deserves to be remembered.</p>
+            <ul class="ul">
+                <p>I’m currently focused on:</p>
+                <li>Sharpening my JavaScript and React skills</li>
+                <li>Building my portfolio projects</li>
+                <li>Exploring freelance opportunities on platforms like Freelancer and Fiverr</li>
+                <li>And creating software that impacts at least 200 users someday</li>
+                <li>When I’m not coding, you’ll probably find me reading, listening to music, learning something new, or exploring ideas that help me become smarter and more confident every day.</li>
+                <li>Let’s build something great together 🌷</li>
+            </ul>
+
+
+            <div class="contant">
+                <h3>Get in Touch</h3>
+                <p style="color:var(--muted); max-width:700px;">
+                  I’m always open to new opportunities, collaborations, or just chatting about web development.
+                  Feel free to send a message below. I’ll get back to you as soon as I can!
                 </p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <svg class="service-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
-                    <h3 class="service-title">Web Development</h3>
-                    <p class="service-description">Building responsive websites with modern technologies</p>
-                </div>
-
-                <div class="service-card">
-                    <svg class="service-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                    </svg>
-                    <h3 class="service-title">UI/UX Design</h3>
-                    <p class="service-description">Creating intuitive and beautiful user interfaces</p>
-                </div>
-
-                <div class="service-card">
-                    <svg class="service-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                    </svg>
-                    <h3 class="service-title">Version Control</h3>
-                    <p class="service-description">Using version control systems like Git/GitHub to collaborate with other developers and manage code changes effectively.</p>
-                </div>
-
-                <div class="service-card">
-                    <svg class="service-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                    </svg>
-                    <h3 class="service-title">Performance</h3>
-                    <p class="service-description">Optimizing for speed and user experience</p>
-                </div>
-
-                <div class="service-card">
-                    <svg class="service-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                    </svg>
-                    <h3 class="service-title">Continous Learning</h3>
-                    <p class="service-description">Staying updated with the latest frontend technologies, trends, and best practices to deliver modern and innovative solution</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section section-background">
-        <div class="container">
-            <h2 class="section-title">
-                Featured <span class="gradient-text">Projects</span>
-            </h2>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="./img/ghfjdkm,s33.png" alt="E-Commerce Platform" class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-description">A fully responsive online store with cart functionality, product filtering, and checkout integration.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Tailwind</span>
-                            <span class="tag">API</span>
-                        </div>
-                        <div class="project-buttons">
-                            <button class="btn btn-outline btn-sm">
-                                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
-                                Code
-                            </button>
-                            <button class="btn btn-primary btn-sm">
-                                <a href="https://fresh-mate-psi.vercel.app/">Live</a>
-                                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-        
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="./img/glowheave.png" alt="Analytics Dashboard" class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Glow Heaven</h3>
-                        <p class="project-description">Interactive landing page for a cosmetic products. it features smooth layouts, soft colors, and a calming aesthetic that highlights beauty and self-care. Perfect for showcasing products or launching a beauty brand online.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">AOS</span>
-                        </div>
-                        <div class="project-buttons">
-                            <button class="btn btn-outline btn-sm">
-                                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
-                                Code
-                            </button>
-                            <button class="btn btn-primary btn-sm">
-                                <a href="https://glow-heavenn.vercel.app/" target="_blank">Live</a>
-                                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                                
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image-wrapper">
-                        <img src="./img/itnrfd55r.png" alt="Creative Portfolio" class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Creative Portfolio</h3>
-                        <p class="project-description">A minimal, responsive web app that instantly counts words, characters, and reading time as you type.</p>
-                        <div class="project-tags">
-                            <span class="tag">Vanilla Js</span>
-                            <span class="tag">AOS</span>
-                            <span class="tag">Tailwind</span>
-                        </div>
-                        <div class="project-buttons">
-                            <button class="btn btn-outline btn-sm">
-                                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
-                                Code
-                            </button>
-                            <button class="btn btn-primary btn-sm">
-                                <a href="https://wise-write.vercel.app/" target="_blank">Live</a>
-                                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                               
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section section-card">
-        <div class="container">
-            <h2 class="section-title">
-                Skills & <span class="gradient-text">Expertise</span>
-            </h2>
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-icon-wrapper">
-                            <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </div>
-                        <div class="skill-info">
-                            <div class="skill-name-row">
-                                <h3 class="skill-name">HTML</h3>
-                                <span class="skill-percent">95%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-icon-wrapper">
-                            <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                            </svg>
-                        </div>
-                        <div class="skill-info">
-                            <div class="skill-name-row">
-                                <h3 class="skill-name">CSS</h3>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-icon-wrapper">
-                            <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                            </svg>
-                        </div>
-                        <div class="skill-info">
-                            <div class="skill-name-row">
-                                <h3 class="skill-name">JavaScript</h3>
-                                <span class="skill-percent">88%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-icon-wrapper">
-                            <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="3" y1="9" x2="21" y2="9"></line>
-                                <line x1="9" y1="21" x2="9" y2="9"></line>
-                            </svg>
-                        </div>
-                        <div class="skill-info">
-                            <div class="skill-name-row">
-                                <h3 class="skill-name">React</h3>
-                                <span class="skill-percent">92%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar" style="width: 92%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-icon-wrapper">
-                            <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                            </svg>
-                        </div>
-                        <div class="skill-info">
-                            <div class="skill-name-row">
-                                <h3 class="skill-name">Tailwind</h3>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-icon-wrapper">
-                            <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                            </svg>
-                        </div>
-                        <div class="skill-info">
-                            <div class="skill-name-row">
-                                <h3 class="skill-name">SEO</h3>
-                                <span class="skill-percent">85%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section section-background">
-        <div class="container-small">
-            <h2 class="section-title">
-                Get In <span class="gradient-text">Touch</span>
-            </h2>
-            
-            <div class="contact-card">
-                <div class="contact-header">
-                    <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <p class="contact-text">Have a project in mind? Let's work together!</p>
-                </div>
-
-                <form id="contactForm" class="contact-form" action="https://formsubmit.co/nedunony16@gmail.com" method="POST">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" class="form-input" placeholder="Your name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-input" placeholder="your.email@example.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" class="form-textarea" rows="6" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-lg btn-full">
-                        <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="22" y1="2" x2="11" y2="13"></line>
-                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                        </svg>
-                        Send Message
-                    </button>
-
-
-
-                    <!-- Optional hidden fields -->
-<input type="hidden" name="_subject" value="New Message from Portfolio">
-<input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-<input type="hidden" name="_captcha" value="false">
-
+              
+                <form id="contact-form" aria-label="Contact form" style="margin-top:24px; max-width:520px;">
+                  <input type="text" name="name" placeholder="Your name" required>
+                  <input type="email" name="email" placeholder="Email" required>
+                  <textarea name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+                  <button class="btn btn-primary" type="submit">Send message</button>
                 </form>
-
-                <div id="toast" class="toast"></div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <p style="color:var(--muted)">Connect: <a href="#" style="color:var(--accent)">GitHub</a> • <a href="#" style="color:var(--accent)">Hashnode</a> • <a href="#" style="color:var(--accent)">Twitter</a></p>
+          </div>
+
+          <!-- <div>
+            <form id="contact-form" aria-label="Contact form">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Email" required>
+              <textarea name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+              <button class="btn btn-primary" type="submit">Send message</button>
+            </form>
+          </div> -->
+
+          <!-- </p> -->
+
+ 
+
         </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="social-links">
-                    <!-- <a href="#" class="social-link" aria-label="GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                        </svg>
-                    </a> -->
-                   <!--  <a href="#" class="social-link" aria-label="LinkedIn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                    </a> -->
+    </main>
+  </div>
 
-                    <a href="#" class="social-link" aria-label="Twitter">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                        </svg>
-                    </a>
-                    <a href="#contact" class="social-link" aria-label="Email">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                    </a>
-                </div>
-                
-                <div class="footer-text">
-                    <p>&copy; <span id="year"></span> Josephine Tech. All rights reserved.</p>
-                    <p class="footer-credit">Built with React & Tailwind CSS</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <script>
+    // Smooth scroll on nav click
+    document.querySelectorAll('a.nav-link').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
 
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    // IntersectionObserver to highlight active nav and reveal sections
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('a.nav-link');
+
+    // reveal on scroll
+    const revealItems = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, {threshold:0.1});
+    revealItems.forEach(i => ro.observe(i));
+
+    // active nav link
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const link = document.querySelector(`a.nav-link[href="#${id}"]`);
+        if (entry.isIntersecting) {
+          navLinks.forEach(n => n.classList.remove('active'));
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { threshold: [0.5] });
+
+    sections.forEach(s => obs.observe(s));
+
+    // animate skill bars when skills section visible
+    const skillsSection = document.getElementById('skills');
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.skill .bar i').forEach(el => {
+            const pct = el.getAttribute('data-fill') || 70;
+            el.style.width = pct + '%';
+          });
+          skillsObserver.disconnect();
+        }
+      });
+    }, {threshold:0.25});
+    if (skillsSection) skillsObserver.observe(skillsSection);
+
+    // contact form simple handler (stub)
+    document.getElementById('contact-form').addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      // simple feedback - replace with real integration
+      alert('Thanks — message captured (this is a demo).');
+      ev.target.reset();
+    });
+
+    // CTA buttons
+    document.getElementById('projects-btn').addEventListener('click', () => {
+      document.getElementById('work').scrollIntoView({behavior:'smooth'});
+    });
+    document.getElementById('contact-btn').addEventListener('click', () => {
+      document.getElementById('about').scrollIntoView({behavior:'smooth'});
+      document.querySelector('input[name="name"]').focus();
+    });
+  </script>
 </body>
 </html>
