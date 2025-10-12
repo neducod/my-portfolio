@@ -445,6 +445,9 @@
             .skills-grid {
               grid-template-columns: 1fr;
             }
+            .blog-header p{
+                width: 250px;
+            }
 
   .skill .bar {
     height: 10px; /* Slightly thicker for visibility on mobile */
@@ -459,4 +462,17 @@
       .work-p{
         text-align: center;
         width: 230px;
+      }
+
+      .project img{
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 30px;
+      }
+      .blog-header{
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        flex-direction: column;
       }
