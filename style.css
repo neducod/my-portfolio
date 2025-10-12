@@ -235,16 +235,10 @@
       }
   
       .projects-grid{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-        margin-top: 18px;
-        /*
         display:grid;
         gap:18px;
         grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
         margin-top:18px;
-        */
       }
       .project{
         background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
@@ -260,6 +254,7 @@
         background:#121212;
         border-radius:8px;
         height:110px;
+        /* width: 60%; */
         display:block;
         margin-bottom:10px;
 
@@ -267,9 +262,9 @@
         /* overflow: hidden; */
       }
       .project-thumb img{
-        height: 109px;
-        width: 230px;
-
+        display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -409,10 +404,6 @@
           margin-left: 0;
           padding: 20px;
         }
-
-
-
-
       }
 
             
@@ -420,13 +411,44 @@
 
 
 
-
       @media (max-width: 600px) {
         .projects-grid {
-            flex-direction: column; /* stack items vertically */
-          }
-        
-          .projects-grid > * {
-            flex: 1 1 100%;
-          }
+          grid-template-columns: 1fr; /* 💥 one column only */
+          gap: 16px;
+        }
+      
+        .project {
+            width: 100%;  
+          min-height: 140px; /* optional: slightly smaller cards on mobile */
+        }
+      }
+
+
+      @media (max-width: 600px) {
+        .project-thumb {
+          aspect-ratio: 16 / 10; /* slightly taller look on mobile */
+          margin-bottom: 12px;
+        }
+      }
+
+
+      .skill{
+        display: none;
+      }
+      .pp{
+        font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
+  /* - min 1rem (~16px) on mobile
+     - scales up with viewport width
+     - max 1.25rem (~20px) on large screens */
+
+  line-height: 1.6;
+  color: var(--muted); /* or var(--cream) if you want brighter text */
+  max-width: 700px; 
+      }
+      @media (max-width: 480px) {
+        .pp {
+          /* font-size: 0.95rem;
+          line-height: 1.55;
+          padding: 0 16px; */
+        }
       }
