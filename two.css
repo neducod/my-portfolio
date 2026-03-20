@@ -425,7 +425,10 @@
     color: var(--cream) !important;
     font-weight: 500;
   }
-  
+  .intro-highlight  a:hover{
+    color: var(--cream);
+    color: #776549;
+  }
   .focus-list {
     margin: 24px 0;
   }
