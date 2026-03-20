@@ -1,14 +1,3 @@
-/*
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('active');
-});
-
-
-*/
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -84,29 +73,6 @@ document.addEventListener('click', e => {
 
 
 
-/*
-
-const gradientText = document.querySelector(".gradient-text");
-
-gradientText.innerHTML = gradientText.innerText
-  .split("")
-  .map((ltr, idx) => {
-    return `<span class="ltr" style="--delay: ${idx * 100}ms">${ltr}</span>`;
-  })
-  .join("");
-
-console.log(gradientText);
-
-const ltrs = document.querySelectorAll(".gradient-text .ltr");
-
-ltrs.forEach((ltr) => {
-  ltr.addEventListener("animationend", () => {
-    ltr.classList.add("show");
-  });
-});
-
-
-*/
 
 
 
@@ -133,28 +99,6 @@ ltrs.forEach((ltr) => {
 
 
 
-
-/*
-
-
-  const hamburger = document.querySelector('.hamburger');
-  const sidebar = document.querySelector('.sidebar');
-
-  // Create overlay
-  const overlay = document.createElement('div');
-  overlay.classList.add('overlay');
-  document.body.appendChild(overlay);
-
-  hamburger.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    overlay.classList.toggle('show');
-  });
-
-  overlay.addEventListener('click', () => {
-    sidebar.classList.remove('active');
-    overlay.classList.remove('show');
-  });
-*/
 
 
 const hamburger = document.querySelector('.hamburger');
