@@ -512,7 +512,10 @@
   }
   
   .hr{
-    display: none;
+    height: 1px;
+    min-width: 100px;
+    width: 700px;
+    /* display: none; */
   }
   /* Responsive Design */
   
