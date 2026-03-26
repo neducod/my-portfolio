@@ -166,18 +166,18 @@
   
   .availability {
     color: var(--accent);
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.2px;
+    /* font-weight: 600; */
+    /* font-size: 14px; */
+    /* letter-spacing: 0.2px; */
   }
   
   .headline {
-    font-size: 64px;
-    line-height: 0.95;
-    font-weight: 700;
+    /* font-size: 64px; */
+    /* line-height: 0.95; */
+    /* font-weight: 700; */
     color: var(--cream);
-    margin: 0;
-    max-width: 980px;
+    /* margin: 0; */
+    /* max-width: 980px; */
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
