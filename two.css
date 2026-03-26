@@ -406,14 +406,15 @@
   }
   
   /* About */
-  .about-container {
-    display: grid;
-    gap: 24px;
-  }
+
+  /* .about-container { */
+    /* display: grid; */
+    /* gap: 24px; */
+  /* } */
   
   .about-text {
-    color: var(--cream);
-    line-height: 1.6;
+    color: var(--cream); 
+    /* line-height: 1.6; */
   }
   
   .about-text p {
@@ -423,7 +424,7 @@
   
   .intro-highlight {
     color: var(--cream) !important;
-    font-weight: 500;
+    /* font-weight: 500; */
   }
   .intro-highlight  a:hover{
     color: var(--cream);
@@ -496,6 +497,7 @@
   
   .social-links {
     margin-top: 32px;
+    /* margin-top: 32px; */
     color: var(--muted);
   }
   
