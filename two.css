@@ -330,11 +330,22 @@
   }
   
   .skill {
-    background: rgba(255, 255, 255, 0.02);
+    background: #ffffff05;
     padding: 16px;
     border-radius: 8px;
   }
   
+  .skill-1{
+    /* background-color: #ffffff05; */
+    /* padding: 16px; */
+    /* border-radius: 8px; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
   .skill strong {
     color: var(--cream);
     font-size: 16px;
