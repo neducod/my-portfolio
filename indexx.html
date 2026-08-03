@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brittany Chiang — Frontend Engineer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+  .bg-radial {
+    background:
+      radial-gradient(1100px 600px at 15% 0%, rgba(56, 74, 115, 0.35), transparent 60%),
+      radial-gradient(900px 500px at 100% 100%, rgba(30, 41, 74, 0.4), transparent 55%),
+      #0a0e1a;
+  }
+  .nav-link.active .nav-dash { width: 2.5rem; background-color: #e6f1ff; }
+  .nav-link.active .nav-label { color: #e6f1ff; }
+  .nav-dash { transition: width .28s ease, background-color .28s ease; }
+  .nav-link:hover .nav-dash { width: 2.5rem; background-color: #8892b0; }
+  .nav-link:hover .nav-label { color: #ccd6f6; }
+  .social-icon { transition: color .2s ease, transform .2s ease; }
+  .social-icon:hover { color: #e6f1ff; transform: translateY(-2px); }
+  .highlight { color: #e6f1ff; font-weight: 600; }
+  .job-card { transition: background-color .25s ease; }
+  .job-card:hover { background-color: rgba(148, 163, 184, 0.04); }
+  .tag-pill {
+    background-color: rgba(45, 212, 191, 0.1);
+    color: #5eead4;
+  }
+  .ext-link { transition: color .2s ease; }
+  .ext-link:hover { color: #5eead4; }
+</style>
+</head>
+<body class="bg-radial min-h-screen text-slate-400 antialiased">
+
+  <div class="mx-auto max-w-6xl px-6 py-16 md:px-12 md:py-24 lg:px-20">
+    <div class="lg:flex lg:gap-12 xl:gap-20">
+
+      <!-- Left column -->
+      <header class="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-12">
+        <div>
+          <h1 class="text-4xl font-extrabold tracking-tight text-slate-100 sm:text-5xl">
+            Brittany Chiang
+          </h1>
+          <h2 class="mt-3 text-lg font-medium text-slate-300 sm:text-xl">
+            Frontend Engineer
+          </h2>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400 sm:text-base">
+            I build accessible, pixel-perfect experiences for the web.
+          </p>
+
+          <!-- Nav -->
+          <nav class="mt-16 hidden lg:block">
+            <ul class="space-y-5">
+              <li>
+                <a href="#about" class="nav-link group flex items-center">
+                  <span class="nav-dash mr-4 h-px w-8 bg-slate-600"></span>
+                  <span class="nav-label text-xs font-bold uppercase tracking-widest text-slate-500">About</span>
+                </a>
+              </li>
+              <li>
+                <a href="#experience" class="nav-link active group flex items-center">
+                  <span class="nav-dash mr-4 h-px w-8 bg-slate-600"></span>
+                  <span class="nav-label text-xs font-bold uppercase tracking-widest text-slate-400">Experience</span>
+                </a>
+              </li>
+              <li>
+                <a href="#projects" class="nav-link group flex items-center">
+                  <span class="nav-dash mr-4 h-px w-8 bg-slate-600"></span>
+                  <span class="nav-label text-xs font-bold uppercase tracking-widest text-slate-500">Projects</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Social icons -->
+        <ul class="mt-12 flex items-center gap-5 lg:mt-0">
+          <li>
+            <a href="#" aria-label="GitHub" class="social-icon block text-slate-500">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.06 11.06 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.54-.01 2.79-.01 3.17 0 .31.2.67.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn" class="social-icon block text-slate-500">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Codepen" class="social-icon block text-slate-500">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+                <line x1="12" y1="2" x2="12" y2="8.5"></line>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram" class="social-icon block text-slate-500">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="h-6 w-6">
+                <rect x="2.5" y="2.5" width="19" height="19" rx="5"/>
+                <circle cx="12" cy="12" r="4.5"/>
+                <circle cx="17.3" cy="6.7" r="1"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Goodreads" class="social-icon block text-slate-500">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-.8 5.6h1.6v8.4h-1.6z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </header>
+
+      <!-- Right column -->
+      <main class="mt-14 lg:mt-0 lg:w-3/5 lg:py-12">
+        <section id="about" class="space-y-6 text-sm leading-relaxed text-slate-400 sm:text-base sm:leading-relaxed">
+          <p>
+            Hi there! I'm Brittany, and I like building things. I'm a frontend engineer with
+            expertise in crafting accessible, pixel-perfect user interfaces. I take pride in
+            creating thoughtful, inclusive products and have a sharp eye for the little
+            details that separate a good product from an exceptional one. I enjoy working
+            most at the intersection of design and engineering, where great user
+            experience meets clean, scalable code.
+          </p>
+
+          <p>
+            Currently, I'm a Senior Frontend Engineer at <span class="highlight">Klaviyo</span>, where I work on our design
+            system and help build new products, like <span class="highlight">Composer</span>. I lead engineering efforts
+            across our component library and front end platform, partnering closely with
+            designers and engineers to ensure accessibility is built into the foundation of
+            everything we ship.
+          </p>
+
+          <p>
+            Previously, I've worked across a wide range of environments — from product
+            studios to startups and large tech companies — including <span class="highlight">Apple</span>, <span class="highlight">Starry
+            Internet</span>, and <span class="highlight">Upstatement</span>. Outside of my day-to-day work, I also created an
+            <span class="highlight">online video course</span> a few years ago which walks through building a real-world,
+            API-driven application from scratch. These experiences have shaped how I
+            think about building products that are both well-crafted and widely usable.
+          </p>
+
+          <p>
+            In my spare time, you can usually find me climbing, playing tennis, hanging out
+            with my wife and two cats, or running around Hyrule searching for <span class="highlight">Korok seeds</span>.
+          </p>
+        </section>
+
+        <section id="experience" class="pt-24 lg:pt-32">
+          <h2 class="mb-8 text-xs font-bold uppercase tracking-widest text-slate-300 lg:hidden">
+            Experience
+          </h2>
+
+          <div class="space-y-12">
+
+            <!-- Job 1 -->
+            <article class="job-card group relative rounded-md p-4 -mx-4 sm:grid sm:grid-cols-[110px_1fr] sm:gap-6">
+              <div class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500 sm:pt-1">
+                2024 — Present
+              </div>
+              <div>
+                <h3 class="text-base font-semibold text-slate-100 sm:text-lg">
+                  <a href="#" class="ext-link inline-flex items-center gap-1.5">
+                    Senior Frontend Engineer, Accessibility · Klaviyo
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0 text-slate-400">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="8 7 17 7 17 16"></polyline>
+                    </svg>
+                  </a>
+                </h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-400 sm:text-base">
+                  Build and maintain critical components used to construct Klaviyo's
+                  frontend, across the whole product. Work closely with cross-functional
+                  teams, including developers, designers, and product managers, to
+                  implement and advocate for best practices in web accessibility.
+                </p>
+                <ul class="mt-4 flex flex-wrap gap-2">
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">JavaScript</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">TypeScript</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">React</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">Storybook</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Job 2 -->
+            <article class="job-card group relative rounded-md p-4 -mx-4 sm:grid sm:grid-cols-[110px_1fr] sm:gap-6">
+              <div class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500 sm:pt-1">
+                2018 — 2024
+              </div>
+              <div>
+                <h3 class="text-base font-semibold text-slate-100 sm:text-lg">
+                  <a href="#" class="ext-link inline-flex items-center gap-1.5">
+                    Lead Engineer · Upstatement
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0 text-slate-400">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="8 7 17 7 17 16"></polyline>
+                    </svg>
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm font-medium text-slate-300">Senior Engineer</p>
+                <p class="text-sm font-medium text-slate-300">Engineer</p>
+                <p class="mt-3 text-sm leading-relaxed text-slate-400 sm:text-base">
+                  Build, style, and ship high-quality websites, design systems, mobile
+                  apps, and digital experiences for a diverse array of projects for
+                  clients including Harvard Business School, Everytown for Gun Safety,
+                  Pratt Institute, Koala Health, Vanderbilt University, The 19th News,
+                  and more. Provide leadership within engineering department through
+                  close collaboration, knowledge shares, and spearheading the
+                  development of internal tools.
+                </p>
+                <ul class="mt-4 flex flex-wrap gap-2">
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">JavaScript</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">TypeScript</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">HTML &amp; SCSS</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">React</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">Next.js</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">React Native</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">WordPress</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">Contentful</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">Node.js</li>
+                  <li class="tag-pill rounded-full px-3 py-1 text-xs font-medium">PHP</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Job 3 -->
+            <article class="job-card group relative rounded-md p-4 -mx-4 sm:grid sm:grid-cols-[110px_1fr] sm:gap-6">
+              <div class="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500 sm:pt-1">
+                July — Dec 2017
+              </div>
+              <div>
+                <h3 class="text-base font-semibold text-slate-100 sm:text-lg">
+                  <a href="#" class="ext-link inline-flex items-center gap-1.5">
+                    UI Engineer Co-op · Apple
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0 text-slate-400">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="8 7 17 7 17 16"></polyline>
+                    </svg>
+                  </a>
+                </h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-400 sm:text-base">
+                  Developed and styled interactive web apps for Apple Music, including
+                  the user interface of Apple Music's embeddable web player widget for
+                  in-browser user authorization and full song playback.
+                </p>
+                <ul class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-slate-500">
+                  <li>
+                    <a href="#" class="ext-link inline-flex items-center gap-1.5 hover:text-slate-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0">
+                        <path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path>
+                        <path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.49-1.49"></path>
+                      </svg>
+                      MusicKit.js
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="ext-link inline-flex items-center gap-1.5 hover:text-slate-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0">
+                        <path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path>
+                        <path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.49-1.49"></path>
+                      </svg>
+                      9to5Mac
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="ext-link inline-flex items-center gap-1.5 hover:text-slate-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0">
+                        <path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"></path>
+                        <path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.49-1.49"></path>
+                      </svg>
+                      The Verge
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <section id="projects" class="pt-32 text-slate-500">
+          <!-- Placeholder for Projects section -->
+        </section>
+      </main>
+
+    </div>
+  </div>
+
+</body>
+</html>
