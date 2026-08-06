@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moodify — Portfolio Case Study</title>
+  <style>
+    /* CSS Variables & Theme Reset */
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #334155;
+      --accent-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #334155;
+      --glass-bg: rgba(30, 41, 59, 0.7);
+      --radius-lg: 16px;
+      --radius-md: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* Container Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ec4899;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+    }
+
+    /* Metadata Grid */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(12px);
+    }
+
+    .meta-item h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .meta-item p {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Links Component */
+    .action-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--text-main);
+      color: var(--bg-dark);
+    }
+
+    .btn-primary:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-secondary {
+      background: var(--glass-bg);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+    }
+
+    /* Content Sections */
+    .section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+      color: #f43f5e;
+    }
+
+    .card.solution h3 {
+      color: #10b981;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Feature Cards List */
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .feature-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    .feature-item h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .feature-item p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* Challenge Box */
+    .challenge-box {
+      background: var(--bg-card);
+      border-left: 4px solid #a855f7;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .challenge-box h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .challenge-box p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 640px) {
+      .title {
+        font-size: 2.25rem;
+      }
+      
+      .action-links {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    
+    <!-- Hero Header -->
+    <header class="hero">
+      <span class="badge">Frontend & UI Design Case Study</span>
+      <h1 class="title">Moodify</h1>
+      <p class="subtitle">An interactive CSS gradient generator tailored to emotional presets and ambient mood styling.</p>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <h4>Role</h4>
+          <p>Frontend Developer</p>
+        </div>
+        <div class="meta-item">
+          <h4>Tech Stack</h4>
+          <p>React, Next.js, Tailwind</p>
+        </div>
+        <div class="meta-item">
+          <h4>Timeline</h4>
+          <p>2 Weeks</p>
+        </div>
+        <div class="meta-item">
+          <h4>Category</h4>
+          <p>Developer Utility</p>
+        </div>
+      </div>
+
+      <div class="action-links">
+        <a href="#" class="btn btn-primary">Live Demo ↗</a>
+        <a href="#" class="btn btn-secondary">Source Code</a>
+      </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section class="section">
+      <h2 class="section-title">Project Overview</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>The Problem</h3>
+          <p>Finding CSS color gradients that convey a specific mood usually requires continuous manual color tweaking. Designers often struggle to quickly map abstract ambiance ideas into production-ready CSS styles with precise angle control.</p>
+        </div>
+        <div class="card solution">
+          <h3>The Solution</h3>
+          <p>Moodify simplifies generator workflow by providing curated atmospheric mood categories, accompanied by fine-grained UI controls for real-time angle, direction, and opacity adjustment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="section">
+      <h2 class="section-title">Key Features</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <h4>Mood Presets</h4>
+          <p>Browse pre-built gradients matched to emotions and themes like "Cyberpunk" or "Sunset."</p>
+        </div>
+        <div class="feature-item">
+          <h4>Angle & Opacity Control</h4>
+          <p>Interactive sliders allow full control over linear gradient angles and layer opacities.</p>
+        </div>
+        <div class="feature-item">
+          <h4>1-Click Code Export</h4>
+          <p>Instantly copy production-ready CSS code directly to your clipboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Implementation -->
+    <section class="section">
+      <h2 class="section-title">Technical Challenges & Solutions</h2>
+      
+      <div class="challenge-box">
+        <h4>1. Real-Time Dynamic Style Calculation</h4>
+        <p><strong>Challenge:</strong> Dynamically updating CSS background strings without causing performance drag during slider movements.<br>
+        <strong>Solution:</strong> Encapsulated parameter state inside isolated React state variables, rebuilding output strings through efficient memoization.</p>
+      </div>
+
+      <div class="challenge-box">
+        <h4>2. Preset Override Management</h4>
+        <p><strong>Challenge:</strong> Maintaining initial palette properties when switching slider parameters mid-session.<br>
+        <strong>Solution:</strong> Separated color stop arrays from angle parameters in the internal data structure to allow safe overrides.</p>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
