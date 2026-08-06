@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moodify — Portfolio Case Study</title>
+  <title>AURA Fashion Studio — Case Study</title>
   <style>
-    /* CSS Variables & Theme Reset */
+    /* CSS Variables & Dark Editorial Theme */
     :root {
-      --bg-dark: #0f172a;
-      --bg-card: #1e293b;
-      --bg-card-hover: #334155;
-      --accent-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --border-color: #334155;
-      --glass-bg: rgba(30, 41, 59, 0.7);
+      --bg-dark: #0f0f11;
+      --bg-card: #18181b;
+      --bg-card-hover: #27272a;
+      --border-color: #27272a;
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent-silver: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+      --accent-emerald: #34d399;
+      --accent-rose: #f87171;
+      --accent-sky: #38bdf8;
       --radius-lg: 16px;
       --radius-md: 8px;
     }
@@ -48,23 +50,29 @@
     .badge {
       display: inline-block;
       padding: 0.35rem 0.85rem;
-      background: var(--glass-bg);
+      background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 999px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #ec4899;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(8px);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
     }
 
     .title {
-      font-size: 3rem;
+      font-size: 3.25rem;
       font-weight: 800;
-      line-height: 1.15;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
       margin-bottom: 1rem;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text; 
+      color: #ffffff;
+    }
+
+    .title span {
+      background: var(--accent-silver);
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
@@ -72,7 +80,7 @@
       font-size: 1.25rem;
       color: var(--text-muted);
       margin-bottom: 2.5rem;
-      max-width: 700px;
+      max-width: 720px;
     }
 
     /* Metadata Grid */
@@ -81,10 +89,9 @@
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1.5rem;
       padding: 1.5rem;
-      background: var(--glass-bg);
+      background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      backdrop-filter: blur(12px);
     }
 
     .meta-item h4 {
@@ -101,11 +108,11 @@
       color: var(--text-main);
     }
 
-    /* Links Component */
+    /* Call to Action Buttons */
     .action-links {
       display: flex;
       gap: 1rem;
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
     }
 
     .btn {
@@ -121,16 +128,16 @@
     }
 
     .btn-primary {
-      background: var(--text-main);
-      color: var(--bg-dark);
+      background: #ffffff;
+      color: #09090b;
     }
 
     .btn-primary:hover {
-      background: #e2e8f0;
+      background: #e4e4e7;
     }
 
     .btn-secondary {
-      background: var(--glass-bg);
+      background: var(--bg-card);
       color: var(--text-main);
       border: 1px solid var(--border-color);
     }
@@ -139,7 +146,7 @@
       background: var(--bg-card-hover);
     }
 
-    /* Content Sections */
+    /* Main Sections */
     .section {
       padding: 3rem 0;
       border-bottom: 1px solid var(--border-color);
@@ -150,9 +157,10 @@
       font-weight: 700;
       margin-bottom: 1.5rem;
       color: var(--text-main);
+      letter-spacing: -0.01em;
     }
 
-    /* Grid Layouts */
+    /* Two-Column Problem/Solution Grid */
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -169,11 +177,14 @@
     .card h3 {
       font-size: 1.15rem;
       margin-bottom: 0.75rem;
-      color: #f43f5e;
+    }
+
+    .card.problem h3 {
+      color: var(--accent-rose);
     }
 
     .card.solution h3 {
-      color: #10b981;
+      color: var(--accent-emerald);
     }
 
     .card p {
@@ -181,7 +192,7 @@
       font-size: 0.95rem;
     }
 
-    /* Feature Cards List */
+    /* Feature Grid */
     .feature-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -192,7 +203,7 @@
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 1.25rem;
+      padding: 1.4rem;
     }
 
     .feature-item h4 {
@@ -206,18 +217,23 @@
       color: var(--text-muted);
     }
 
-    /* Challenge Box */
+    /* Technical Highlight Box */
     .challenge-box {
       background: var(--bg-card);
-      border-left: 4px solid #a855f7;
+      border-left: 4px solid var(--accent-sky);
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
     }
 
+    .challenge-box.purple {
+      border-left-color: #a855f7;
+    }
+
     .challenge-box h4 {
       font-size: 1.05rem;
       margin-bottom: 0.5rem;
+      color: var(--text-main);
     }
 
     .challenge-box p {
@@ -228,7 +244,7 @@
     /* Responsive Design */
     @media (max-width: 640px) {
       .title {
-        font-size: 2.25rem;
+        font-size: 2.35rem;
       }
       
       .action-links {
@@ -243,31 +259,31 @@
     
     <!-- Hero Header -->
     <header class="hero">
-      <span class="badge">Frontend & UI Design Case Study</span>
-      <h1 class="title">Moodify</h1>
-      <p class="subtitle">An interactive CSS gradient generator tailored to emotional presets and ambient mood styling.</p>
+      <span class="badge">E-Commerce & Frontend Case Study</span>
+      <h1 class="title">AURA <span>Fashion Studio</span></h1>
+      <p class="subtitle">A media-rich, high-performance single-page web template engineered for modern fashion brands and digital storefronts.</p>
 
       <div class="meta-grid">
         <div class="meta-item">
           <h4>Role</h4>
-          <p>Frontend Developer</p>
+          <p>Frontend Architect</p>
         </div>
         <div class="meta-item">
           <h4>Tech Stack</h4>
-          <p>React, Next.js, Tailwind</p>
+          <p>Next.js, React, Tailwind</p>
         </div>
         <div class="meta-item">
-          <h4>Timeline</h4>
-          <p>2 Weeks</p>
+          <h4>Performance Score</h4>
+          <p>98 / 100 Lighthouse</p>
         </div>
         <div class="meta-item">
-          <h4>Category</h4>
-          <p>Developer Utility</p>
+          <h4>Layout Architecture</h4>
+          <p>Single-Page Showcase</p>
         </div>
       </div>
 
       <div class="action-links">
-        <a href="#" class="btn btn-primary">Live Demo ↗</a>
+        <a href="#" class="btn btn-primary">Live Preview ↗</a>
         <a href="#" class="btn btn-secondary">Source Code</a>
       </div>
     </header>
@@ -276,50 +292,50 @@
     <section class="section">
       <h2 class="section-title">Project Overview</h2>
       <div class="grid-2">
-        <div class="card">
-          <h3>The Problem</h3>
-          <p>Finding CSS color gradients that convey a specific mood usually requires continuous manual color tweaking. Designers often struggle to quickly map abstract ambiance ideas into production-ready CSS styles with precise angle control.</p>
+        <div class="card problem">
+          <h3>The Challenge</h3>
+          <p>Emerging fashion labels struggle to present visually high-impact media without sacrificing site load speed, often leading to fragmented multi-page designs that lower user engagement and conversion rates.</p>
         </div>
         <div class="card solution">
           <h3>The Solution</h3>
-          <p>Moodify simplifies generator workflow by providing curated atmospheric mood categories, accompanied by fine-grained UI controls for real-time angle, direction, and opacity adjustment.</p>
+          <p>An all-in-one, highly optimized single-page template that combines high-resolution video assets and lookbook galleries with responsive visual components and swift performance architecture.</p>
         </div>
       </div>
     </section>
 
     <!-- Key Features -->
     <section class="section">
-      <h2 class="section-title">Key Features</h2>
+      <h2 class="section-title">Core Features</h2>
       <div class="feature-list">
         <div class="feature-item">
-          <h4>Mood Presets</h4>
-          <p>Browse pre-built gradients matched to emotions and themes like "Cyberpunk" or "Sunset."</p>
+          <h4>Media-Rich Hero Section</h4>
+          <p>High-bitrate hero loop with adaptive viewport scaling and smooth asset lazy-loading fallbacks.</p>
         </div>
         <div class="feature-item">
-          <h4>Angle & Opacity Control</h4>
-          <p>Interactive sliders allow full control over linear gradient angles and layer opacities.</p>
+          <h4>Interactive Editorial Lookbook</h4>
+          <p>Seamless lightbox gallery for high-resolution brand photography and product showcases.</p>
         </div>
         <div class="feature-item">
-          <h4>1-Click Code Export</h4>
-          <p>Instantly copy production-ready CSS code directly to your clipboard.</p>
+          <h4>Single-Page Conversion Layout</h4>
+          <p>Consolidates story, product grid, sizing guides, and touchpoints into a unified user journey.</p>
         </div>
       </div>
     </section>
 
     <!-- Technical Implementation -->
     <section class="section">
-      <h2 class="section-title">Technical Challenges & Solutions</h2>
+      <h2 class="section-title">Technical Highlights</h2>
       
       <div class="challenge-box">
-        <h4>1. Real-Time Dynamic Style Calculation</h4>
-        <p><strong>Challenge:</strong> Dynamically updating CSS background strings without causing performance drag during slider movements.<br>
-        <strong>Solution:</strong> Encapsulated parameter state inside isolated React state variables, rebuilding output strings through efficient memoization.</p>
+        <h4>1. Asset Optimization & Fast Load Times</h4>
+        <p><strong>Challenge:</strong> Maintaining crisp full-screen video background loops while keeping initial page render times under 1.5 seconds.<br>
+        <strong>Solution:</strong> Configured progressive video loading, WebP/AVIF image formats, and Next.js modern media streaming pipeline.</p>
       </div>
 
-      <div class="challenge-box">
-        <h4>2. Preset Override Management</h4>
-        <p><strong>Challenge:</strong> Maintaining initial palette properties when switching slider parameters mid-session.<br>
-        <strong>Solution:</strong> Separated color stop arrays from angle parameters in the internal data structure to allow safe overrides.</p>
+      <div class="challenge-box purple">
+        <h4>2. Unified UX Storytelling</h4>
+        <p><strong>Challenge:</strong> Balancing rich aesthetic branding with seamless navigation and fast scroll responsiveness.<br>
+        <strong>Solution:</strong> Built custom dynamic section scroll triggers paired with a minimal sticky navbar and interactive visual state locks.</p>
       </div>
     </section>
 
