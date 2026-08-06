@@ -5,7 +5,10 @@
     justify-content: start;
 }
 .newa{
-color: var(--muted);
+color: #00F0E0;
 font-size: 14px;
 line-height: 1.5;
+}
+.newa:hover{
+    color: #08cbbe;
 }
