@@ -1,0 +1,11 @@
+.new-wrapper{
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    justify-content: start;
+}
+.newa{
+color: var(--muted);
+font-size: 14px;
+line-height: 1.5;
+}
