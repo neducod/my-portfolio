@@ -4,6 +4,12 @@
     margin-top: 8px;
     justify-content: start;
 }
+.new-wrapper-a{
+    display: flex;
+    gap: 6px;
+    margin-top: 23px;
+    justify-content: start;
+}
 .newa{
 color: #00F0E0;
 font-size: 14px;
