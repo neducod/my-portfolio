@@ -485,18 +485,27 @@
   }
   
   .social-links {
-    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding-bottom: 10px;
     color: var(--muted);
   }
   
   .social-links a {
-    color: var(--accent);
+    color: var(--accent); 
     text-decoration: none;
     transition: color var(--smooth);
   }
   
   .social-links a:hover {
     color: var(--cream);
+  }
+
+  .socialLink{
+    display: flex;
+    margin-top: 20px;
   }
   
   .hr{
@@ -506,8 +515,8 @@
   }
   /* Responsive Design */
   
-  /* Tablet (768px - 1024px) */
-  /*@media (max-width: 1024px) {
+  /*Tablet (768px - 1024px) */
+  @media (max-width: 1024px) {
     .main {
       padding: 48px 40px;
     }
@@ -528,10 +537,9 @@
       height: 100px;
     }
   
-    /
-  
+  }  
   /* Tablet Portrait & Mobile Landscape (below 768px) */
-  /*
+  
   @media (max-width: 768px) {
     .sidebar {
       transform: translateX(-100%);
@@ -585,9 +593,7 @@
       font-size: 32px;
     }
   }
-  */
   /* Mobile (below 480px) */
-  /*
   @media (max-width: 480px) {
     .hr{
       width: 150px;
@@ -662,5 +668,3 @@
       max-width: 100%;
     }
   }
-
-*/
