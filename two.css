@@ -257,8 +257,8 @@
   
   .projects-grid {
     display: grid;
-    gap: 68px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     margin-top: 18px;
   }
    .project {

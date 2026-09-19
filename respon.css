@@ -1,5 +1,14 @@
 
+/*
+      <!-- <article class="project reveal">
+            <div class="project-thumb">
+              <img src="./img/upcijcd.png" alt="WordPress Website" loading="lazy" />
+            </div>
+            <h3>WordPress Website</h3>
+            <p class="project-description">Coming Soon...</p>
+          </article> -->
 
+*/
   @media (max-width: 992px) {
     body {
       flex-direction: column;
