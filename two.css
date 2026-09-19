@@ -255,14 +255,13 @@
     margin-bottom: 24px;
   }
   
-  /* .projects-grid {
+  .projects-grid {
     display: grid;
     gap: 68px;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     margin-top: 18px;
   }
-   */
-  /* .project {
+   .project {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
     border-radius: 12px;
     padding: 10px;
@@ -272,7 +271,7 @@
     width: 350px;
     transition: transform var(--smooth), box-shadow var(--smooth);
   }
-   */
+
 
 
   .project:hover {

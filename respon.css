@@ -1,55 +1,5 @@
 
 
-
-
-
-
-/*
-
-
-  @media (max-width: 992px) {
-    body {
-      flex-direction: column;
-    }
-  
-    .sidebar {
-      position: relative;
-      width: 100%;
-      height: auto;
-      border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding: 20px 10%;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .sidebar nav {
-      flex-direction: row;
-      gap: 16px;
-    }
-  
-    main {
-      margin-left: 0;
-      padding: 60px 6%;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .sidebar nav {
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-  
-    .sidebar h1 {
-      font-size: 0.9rem;
-    }
-  
-    main {
-      padding: 40px 5%;
-    }
-  }
-  */
   @media (max-width: 992px) {
     body {
       flex-direction: column;
