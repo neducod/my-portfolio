@@ -510,9 +510,21 @@
   
   .hr{
     height: 1px;
-    min-width: 100px;
-    width: 700px;
+    /* min-width: 100px; */
+    /* width: 700px; */
+
+
+  min-width: 100px;
+  width: 100%;
+  max-width: 700px;
   }
+
+
+
+
+
+
+  
   /* Responsive Design */
   
   /*Tablet (768px - 1024px) */

@@ -1,0 +1,10 @@
+.end-credits{
+    display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 10px; padding-bottom: 40px;
+}
+
+
+@media (max-width: 1024px) {
+    .sidebar {
+      display: none;
+    }
+  }
