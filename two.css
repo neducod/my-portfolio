@@ -524,7 +524,7 @@
 
 
 
-  
+
   /* Responsive Design */
   
   /*Tablet (768px - 1024px) */
@@ -552,7 +552,6 @@
   
   }  
   /* Tablet Portrait & Mobile Landscape (below 768px) */
-  /*
   @media (max-width: 768px) {
     .sidebar {
       transform: translateX(-100%);
