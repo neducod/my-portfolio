@@ -7,4 +7,10 @@
     .sidebar {
       display: none;
     }
+    #sidebar{
+        display: none;
+    }
+    .app{
+        display: none;
+    }
   }
