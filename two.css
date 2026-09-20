@@ -606,7 +606,6 @@
     }
   }
   /* Mobile (below 480px) */
-  /*
   @media (max-width: 480px) {
     .hr{
       width: 150px;
