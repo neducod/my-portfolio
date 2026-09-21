@@ -244,20 +244,28 @@
   }
   
   .projects-grid {
-    display: grid;
+    /* display: grid;
     gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    margin-top: 18px;
+    margin-top: 18px; */
+    display: grid;
+  gap: 2rem; /* Scalable gap (32px default) */
+  /* Lowered minimum width slightly to accommodate smaller mobile screens */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 18px;
   }
    .project {
+
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-    border-radius: 12px;
-    padding: 10px;
-    overflow: hidden;
-    min-height: 300px;
-    max-width: 400px;
-    width: 350px;
-    transition: transform var(--smooth), box-shadow var(--smooth);
+  border-radius: 12px;
+  padding: 16px;
+  overflow: hidden;
+  min-height: 300px;
+  
+  /* Make width fluid so Grid can auto-stretch items */
+  width: 100%;
+  
+  transition: transform var(--smooth), box-shadow var(--smooth);
   }
 
 
