@@ -398,7 +398,7 @@
     transform: translateY(-6px);
   }
   
-  .blog-item img {
+  /* .blog-item img {
     width: 100%;
     height: auto;
     display: block;
@@ -408,7 +408,7 @@
   
   .blog-item:hover img {
     transform: scale(1.02);
-  }
+  } */
   
   
   .about-text {
